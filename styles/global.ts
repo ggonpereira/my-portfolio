@@ -7,4 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0px;
     font-family: "Fira Code", sans-serif;
   }
+
+  :root {
+    font-size: 62.5%;
+  }
 `
