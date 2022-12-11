@@ -3,7 +3,7 @@ import { VariantTypes } from './Typography'
 
 interface TypographyProps {
   variantType: VariantTypes
-  color: string
+  color?: string
 }
 
 const typeVariants = {

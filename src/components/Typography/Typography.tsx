@@ -11,7 +11,7 @@ export interface TypographyProps {
 export const Typography = ({
   children,
   variantType = 'md',
-  color = '#ffffff',
+  color,
 }: TypographyProps) => {
   return (
     <S.Typography variantType={variantType} color={color}>
