@@ -5,14 +5,13 @@ interface ContainerProps {
 }
 
 const isActiveCSS = css`
-  border-color: ${({ theme }) => theme.colors.accent.orange};
+  border-bottom-color: ${({ theme }) => theme.colors.accent.orange};
   color: ${({ theme }) => theme.colors.white};
 `
 
 export const Container = styled.div<ContainerProps>`
   align-items: center;
   border-bottom: 0.3rem solid transparent;
-  color: ${({ theme }) => theme.colors.secondary.grey};
   cursor: pointer;
   display: flex;
   height: 100%;
@@ -20,9 +19,7 @@ export const Container = styled.div<ContainerProps>`
   transition: all 0.25s ease;
   user-select: none;
 
-  &:not(:first-of-type) {
-    border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
-  }
+  border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
 
   &:last-of-type {
     border-right: 0.1rem solid ${({ theme }) => theme.colors.lines};

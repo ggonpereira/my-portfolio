@@ -23,5 +23,5 @@ export const Typography = styled.p<TypographyProps>`
   ${({ variantType }) => variantType === 'md' && typeVariants.mdVariant}
   ${({ variantType }) => variantType === 'sm' && typeVariants.smVariant}
 
-  color: ${({ color }) => color}
+  color: ${({ color, theme }) => color || theme.colors.secondary.grey}
 `

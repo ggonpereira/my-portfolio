@@ -42,7 +42,6 @@ const socialMediaCSS = css`
   transition: color 0.25s ease;
 
   :hover {
-    color: ${({ theme }) => theme.colors.secondary.grey};
     background-color: transparent;
     outline: none;
   }
