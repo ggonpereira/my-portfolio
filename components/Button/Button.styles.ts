@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 interface ButtonProps {
   disabled: boolean
   btnTheme: 'default' | 'primary' | 'ghost'
+  isSocialMedia: boolean
 }
 
 const defaultThemeCSS = css`
@@ -34,6 +35,19 @@ const ghostThemeCSS = css`
   }
 `
 
+const socialMediaCSS = css`
+  background-color: transparent;
+  color: ${({ theme }) => theme.colors.lines};
+  outline: none;
+  transition: color 0.25s ease;
+
+  :hover {
+    color: ${({ theme }) => theme.colors.secondary.grey};
+    background-color: transparent;
+    outline: none;
+  }
+`
+
 export const Container = styled.button<ButtonProps>`
   border-radius: 0.5rem;
   font-size: 1.4rem;
@@ -49,4 +63,6 @@ export const Container = styled.button<ButtonProps>`
   &:disabled {
     opacity: 0.5;
   }
+
+  ${({ isSocialMedia }) => isSocialMedia && socialMediaCSS}
 `

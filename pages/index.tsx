@@ -1,7 +1,14 @@
 import React from 'react'
+import { Button } from '../components/Button'
 
 const Home = () => {
-  return <div>Home</div>
+  return (
+    <div>
+      <Button isSocialMedia>
+        <i className="ri-admin-line" />
+      </Button>
+    </div>
+  )
 }
 
 export default Home
