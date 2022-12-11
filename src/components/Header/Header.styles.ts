@@ -4,7 +4,7 @@ export const Container = styled.header`
   align-items: center;
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
   display: grid;
-  grid-template-columns: 0.45fr auto auto;
+  grid-template-columns: 33rem auto auto;
   height: 5.6rem;
 `
 

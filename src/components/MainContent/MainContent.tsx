@@ -1,4 +1,5 @@
 import React from 'react'
+import { topics } from '../../content/about-me-tab'
 import { useAppContext } from '../../contexts/AppContext'
 import { AboutMeTab } from '../layouts/AboutMeTab'
 import { HelloTab } from '../layouts/HelloTab'
@@ -9,7 +10,7 @@ export const MainContent = () => {
 
   const RenderComponentByTab = () => {
     if (activeTab === '_hello') return <HelloTab />
-    if (activeTab === '_about-me') return <AboutMeTab />
+    if (activeTab === '_about-me') return <AboutMeTab topics={topics} />
 
     return <HelloTab />
   }
