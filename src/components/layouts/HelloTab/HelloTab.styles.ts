@@ -60,7 +60,7 @@ export const AvatarArea = styled.div`
 
   img {
     height: auto;
-    left: 0;
+    left: -3rem;
     object-fit: cover;
     width: 30vw;
   }
