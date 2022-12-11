@@ -8,10 +8,10 @@ interface HeadingProps {
 
 const typeVariants = {
   headlineVariant: {
-    fontSize: '1.8rem',
+    fontSize: '6.2rem',
   },
   subHeadlineVariant: {
-    fontSize: '1.6rem',
+    fontSize: '3.2rem',
   },
 }
 
