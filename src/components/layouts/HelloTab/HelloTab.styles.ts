@@ -58,6 +58,10 @@ export const AvatarArea = styled.div`
     position: absolute;
   }
 
+  svg {
+    left: -65%;
+  }
+
   img {
     height: auto;
     left: -3rem;
