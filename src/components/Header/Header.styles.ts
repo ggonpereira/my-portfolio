@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.header`
   align-items: center;
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
-  display: flex;
+  display: grid;
+  grid-template-columns: 31.1rem auto auto;
   height: 5.6rem;
 `
 

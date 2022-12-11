@@ -4,6 +4,7 @@ import { TabsArea } from '../TabsArea'
 import { Typography } from '../Typography'
 import { tabs } from '../../content/tabs'
 import * as S from './Header.styles'
+import { ContactMeArea } from '../ContactMeArea'
 
 export const Header = () => {
   const { colors } = useTheme()
@@ -15,6 +16,8 @@ export const Header = () => {
       </S.NameArea>
 
       <TabsArea tabs={tabs} />
+
+      <ContactMeArea label="_contact-me" />
     </S.Container>
   )
 }
