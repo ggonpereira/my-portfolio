@@ -12,6 +12,7 @@ export const theme = {
       purpleBlue: '#4d5bce',
     },
     white: '#ffffff',
+    white100: '#E5E9F0',
     opacityWhite: 'rgb(255, 255, 255, 0.5)',
     accent: {
       orange: '#fea55f',

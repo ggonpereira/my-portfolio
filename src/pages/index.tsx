@@ -1,6 +1,7 @@
 import React from 'react'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
+import { MainContent } from '../components/MainContent'
 import * as S from '../styles/pages/Home.styles'
 
 const Home = () => {
@@ -8,7 +9,7 @@ const Home = () => {
     <S.Container>
       <Header />
 
-      <div style={{ flex: 1 }} />
+      <MainContent />
 
       <Footer />
     </S.Container>
