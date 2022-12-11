@@ -12,7 +12,7 @@ interface AppProviderProps {
 export const AppContext = createContext({} as AppContextProps)
 
 export function AppProvider({ children }: AppProviderProps) {
-  const [activeTab, setActiveTab] = useState('hello')
+  const [activeTab, setActiveTab] = useState('_hello')
 
   const handleChangeTab = useCallback(
     (tab: string) => {
