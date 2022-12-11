@@ -1,11 +1,19 @@
 import React, { useState } from 'react'
-import { Content, TopicObject } from '../layouts/AboutMeTab'
+import { Content, TopicObject } from '../layouts/AboutMeTab/interfaces'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 
-type TopicDropdownProps = TopicObject
+type TopicDropdownProps = TopicObject & {
+  handleOpenFile: (fileTitle: string) => void
+  handleFileOnScreen: (fileTitle: string) => void
+}
 
-export const TopicDropdown = ({ topicTitle, content }: TopicDropdownProps) => {
+export const TopicDropdown = ({
+  topicTitle,
+  content,
+  handleOpenFile,
+  handleFileOnScreen,
+}: TopicDropdownProps) => {
   const [isTopicOpen, setIsTopicOpen] = useState(false)
   const [openedFolders, setOpenedFolders] = useState<string[]>([])
 
@@ -29,6 +37,11 @@ export const TopicDropdown = ({ topicTitle, content }: TopicDropdownProps) => {
   const validateIfContentIsFolder = (_content: Content) =>
     _content.isFolder && !!_content.folderTitle
 
+  const handleItemClick = (itemTitle: string) => {
+    handleFileOnScreen(itemTitle)
+    handleOpenFile(itemTitle)
+  }
+
   return (
     <S.TopicDropdown>
       <S.DropdownHeader isOpen={isTopicOpen} onClick={handleTopicVisibility}>
@@ -49,12 +62,23 @@ export const TopicDropdown = ({ topicTitle, content }: TopicDropdownProps) => {
               mappedContent.folderTitle || ''
             )
 
+            const handleContentClick = () => {
+              console.info(mappedContent)
+              if (mappedContent.onClick) {
+                eval(mappedContent.onClick)
+              }
+
+              if (mappedContent.contentTitle?.includes('.md')) {
+                handleOpenFile(mappedContent.contentTitle)
+              }
+            }
+
             return (
               <S.Content
                 key={
                   mappedContent.contentTitle || mappedContent.folderTitle || i
                 }
-                onClick={mappedContent.onClick && eval(mappedContent.onClick)}
+                onClick={handleContentClick}
               >
                 <S.MainArea
                   isOpen={IS_VALID_FOLDER && IS_FOLDER_OPENED}
@@ -87,7 +111,10 @@ export const TopicDropdown = ({ topicTitle, content }: TopicDropdownProps) => {
                   mappedContent.subItems && (
                     <S.ContentItems>
                       {mappedContent.subItems.map((item, i) => (
-                        <S.Item key={`${item.title}-${i}`}>
+                        <S.Item
+                          key={`${item.title}-${i}`}
+                          onClick={() => handleItemClick(item.title)}
+                        >
                           <i className={item.icon || 'ri-markdown-fill'} />
 
                           <Typography>{item.title}</Typography>

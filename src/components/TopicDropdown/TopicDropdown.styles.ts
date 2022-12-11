@@ -172,8 +172,16 @@ export const ContentItems = styled.div<ContentItemsProps>`
 
 export const Item = styled.div`
   align-items: center;
+  cursor: pointer;
   display: flex;
   gap: 0.9rem;
+  transition: color 0.25s;
+
+  :hover {
+    p {
+      color: ${({ theme }) => theme.colors.white};
+    }
+  }
 
   :first-of-type {
     margin-top: 1rem;

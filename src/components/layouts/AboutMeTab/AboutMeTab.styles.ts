@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   display: grid;
@@ -38,7 +38,7 @@ export const MainSidebar = styled.div`
   flex-direction: column;
   width: 100%;
   overflow-y: auto;
-  max-height: calc(100vh - 4rem - 5.6rem - 5rem);
+  max-height: calc(100vh - 14.6rem);
 
   ::-webkit-scrollbar {
     width: 0.7rem;

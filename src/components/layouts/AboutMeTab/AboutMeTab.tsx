@@ -1,33 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { decorationIcons } from '../../../content/about-me-tab'
+import { OpenedFiles } from '../../OpenedFiles'
 import { TopicDropdown } from '../../TopicDropdown'
 import * as S from './AboutMeTab.styles'
-
-export interface SubItems {
-  icon?: string
-  title: string
-}
-
-export interface Content {
-  icon?: string
-  isFolder: boolean
-  folderColor?: string
-  folderTitle?: string
-  contentTitle?: string
-  subItems?: SubItems[]
-  onClick?: string
-}
-
-export interface TopicObject {
-  topicTitle: string
-  content: Content[]
-}
-
-interface AboutMeTabProps {
-  topics: TopicObject[]
-}
+import { AboutMeTabProps } from './interfaces'
 
 export const AboutMeTab = ({ topics }: AboutMeTabProps) => {
+  const [openedFiles, setOpenedFiles] = useState<string[]>([])
+  const [fileOnScreen, setFileOnScreen] = useState('')
+
+  const handleFileVisibility = (fileTitle: string) => {
+    if (!fileTitle || openedFiles.includes(fileTitle)) return
+
+    setOpenedFiles((oldValue) => [...oldValue, fileTitle])
+  }
+
+  const handleCloseFile = (fileTitle: string) => {
+    const filteredList = openedFiles.filter((file) => file !== fileTitle)
+
+    setOpenedFiles(filteredList)
+    setFileOnScreen(filteredList[0])
+  }
+
+  const handleSetFileOnScreen = (fileTitle: string) => {
+    setFileOnScreen(fileTitle)
+  }
+
   return (
     <S.Container>
       <S.Sidebar>
@@ -39,12 +37,22 @@ export const AboutMeTab = ({ topics }: AboutMeTabProps) => {
 
         <S.MainSidebar>
           {topics.map((topic, i) => (
-            <TopicDropdown key={i} {...topic} />
+            <TopicDropdown
+              key={i}
+              {...topic}
+              handleOpenFile={handleFileVisibility}
+              handleFileOnScreen={handleSetFileOnScreen}
+            />
           ))}
         </S.MainSidebar>
       </S.Sidebar>
 
-      <div />
+      <OpenedFiles
+        openedFiles={openedFiles}
+        handleCloseFile={handleCloseFile}
+        fileOnScreen={fileOnScreen}
+        handleFileOnScreen={handleSetFileOnScreen}
+      />
 
       <div />
     </S.Container>
