@@ -15,13 +15,15 @@ export const Button = ({
   onClick,
   children,
   isSocialMedia = false,
-}: ButtonProps) => (
-  <S.Container
-    disabled={disabled}
-    btnTheme={btnTheme}
-    onClick={onClick}
-    isSocialMedia={isSocialMedia}
-  >
-    {children}
-  </S.Container>
-)
+}: ButtonProps) => {
+  return (
+    <S.Container
+      disabled={disabled}
+      btnTheme={btnTheme}
+      onClick={onClick}
+      isSocialMedia={isSocialMedia}
+    >
+      {children}
+    </S.Container>
+  )
+}
