@@ -1,13 +1,12 @@
 import React from 'react'
-import { Button } from '../components/Button'
+import { Header } from '../components/Header'
+import * as S from '../styles/pages/Home.styles'
 
 const Home = () => {
   return (
-    <div>
-      <Button isSocialMedia>
-        <i className="ri-admin-line" />
-      </Button>
-    </div>
+    <S.Container>
+      <Header />
+    </S.Container>
   )
 }
 
