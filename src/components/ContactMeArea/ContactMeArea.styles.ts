@@ -19,4 +19,6 @@ export const Container = styled(ContainerPrimitive)<ContainerProps>`
   width: fit-content;
 
   ${({ isActive }) => isActive && isActiveCSS}
+
+  border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
 `
