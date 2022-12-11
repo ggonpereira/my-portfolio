@@ -69,7 +69,7 @@ export const HelloTab = () => {
       <S.AvatarArea>
         <BackgroundBlurs />
 
-        <Image src={avatarImage} alt="Gabriel Gonçalves Pereira" />
+        <Image src={avatarImage} alt="Gabriel Gonçalves Pereira" priority />
       </S.AvatarArea>
     </S.Container>
   )
