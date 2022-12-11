@@ -7,6 +7,7 @@ export const theme = {
     },
     secondary: {
       grey: '#607b96',
+      darkGrey: '#273e53',
       greenish: '#3c9d93',
       purpleBlue: '#4d5bce',
     },
