@@ -6,7 +6,6 @@ interface ButtonProps {
   btnTheme?: 'default' | 'primary' | 'ghost'
   onClick?: () => void
   children: React.ReactNode
-  isSocialMedia?: boolean
 }
 
 export const Button = ({
@@ -14,15 +13,9 @@ export const Button = ({
   btnTheme = 'default',
   onClick,
   children,
-  isSocialMedia = false,
 }: ButtonProps) => {
   return (
-    <S.Container
-      disabled={disabled}
-      btnTheme={btnTheme}
-      onClick={onClick}
-      isSocialMedia={isSocialMedia}
-    >
+    <S.Container disabled={disabled} btnTheme={btnTheme} onClick={onClick}>
       {children}
     </S.Container>
   )

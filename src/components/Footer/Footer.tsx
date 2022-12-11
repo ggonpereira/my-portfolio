@@ -1,7 +1,6 @@
 import React from 'react'
-import { openPage } from '../../common/helpers/functions'
 import { footerSocialMedias } from '../../content/social-medias'
-import { Button } from '../Button'
+import { SocialMediaLink } from '../SocialMediaLink'
 import { Typography } from '../Typography'
 import * as S from './Footer.styles'
 
@@ -17,21 +16,18 @@ export const Footer = () => {
 
         {footerSocialMedias.map(({ icon, name, url }) => (
           <S.SocialMedia key={name}>
-            <Button onClick={() => openPage(url)} isSocialMedia>
-              <i className={icon} />
-            </Button>
+            <SocialMediaLink icon={icon} url={url} />
           </S.SocialMedia>
         ))}
       </S.SocialMediaArea>
 
       <S.GitHubArea>
-        <Button
-          isSocialMedia
-          onClick={() => openPage(`https://github.com/${GITHUB_HANDLE}/`)}
+        <SocialMediaLink
+          icon="ri-github-fill"
+          url={`https://github.com/${GITHUB_HANDLE}/`}
         >
           <Typography>@{GITHUB_HANDLE}</Typography>
-          <i className="ri-github-fill" />
-        </Button>
+        </SocialMediaLink>
       </S.GitHubArea>
     </S.Container>
   )

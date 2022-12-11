@@ -33,7 +33,7 @@ export const SocialMedia = styled.div`
 export const GitHubArea = styled.div`
   border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
 
-  button {
+  a {
     align-items: center;
     display: flex;
     gap: 0.7rem;
