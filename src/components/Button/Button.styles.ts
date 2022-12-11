@@ -26,33 +26,42 @@ const primaryThemeCSS = css`
 
 const ghostThemeCSS = css`
   background-color: transparent;
-  outline: 0.1rem solid ${({ theme }) => theme.colors.white};
   color: ${({ theme }) => theme.colors.white};
+  outline: 0.1rem solid ${({ theme }) => theme.colors.white};
 
   :hover {
-    outline: 0.1rem solid ${({ theme }) => theme.colors.opacityWhite};
     color: ${({ theme }) => theme.colors.opacityWhite};
+    outline: 0.1rem solid ${({ theme }) => theme.colors.opacityWhite};
   }
 `
 
 const socialMediaCSS = css`
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.lines};
-  outline: none;
-  transition: color 0.25s ease;
 
   :hover {
-    background-color: transparent;
+    i {
+      background-color: transparent;
+      color: ${({ theme }) => theme.colors.secondary.grey};
+      outline: none;
+    }
+  }
+
+  i {
+    color: ${({ theme }) => theme.colors.lines};
     outline: none;
+    transition: color 0.25s ease;
   }
 `
 
 export const Container = styled.button<ButtonProps>`
+  align-items: center;
   border-radius: 0.5rem;
-  font-size: 1.4rem;
-  padding: 1rem 1.4rem;
-  cursor: pointer;
   border: none;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: center;
+  padding: 1rem 1.4rem;
   transition: background-color 0.25s ease;
 
   ${({ btnTheme }) => btnTheme === 'default' && defaultThemeCSS}
