@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Fira Code", sans-serif;
   }
 
+  body {
+    background-color: ${({ theme }) => theme.colors.primary.darker}
+  }
+
   :root {
     font-size: 62.5%;
   }
