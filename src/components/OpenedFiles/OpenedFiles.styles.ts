@@ -7,9 +7,27 @@ export const OpenedFilesContainer = styled.div`
 
 export const OpenedFilesHeader = styled.div`
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
-  display: flex;
-  width: 100%;
   border-right: 0.1rem solid ${({ theme }) => theme.colors.lines};
+  display: flex;
+  max-width: 40vw;
+  overflow: auto;
+  width: 100%;
+
+  ::-webkit-scrollbar {
+    height: 0.3rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.secondary.grey};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.colors.secondary.darkGrey};
+  }
 `
 
 export const File = styled.div`
@@ -21,6 +39,7 @@ export const File = styled.div`
   height: 100%;
   padding: 1rem;
   user-select: none;
+  white-space: nowrap;
   width: fit-content;
 
   i {

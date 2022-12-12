@@ -59,13 +59,13 @@ export const AvatarArea = styled.div`
   }
 
   svg {
-    left: -65%;
+    left: -12vw;
   }
 
   img {
     height: auto;
     left: -3rem;
     object-fit: cover;
-    width: 30vw;
+    width: 22vw;
   }
 `
