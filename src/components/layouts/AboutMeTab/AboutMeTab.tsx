@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { decorationIcons } from '../../../content/about-me-tab'
+import { MyTechs } from '../../MyTechs'
 import { OpenedFiles } from '../../OpenedFiles'
 import { TopicDropdown } from '../../TopicDropdown'
 import * as S from './AboutMeTab.styles'
@@ -54,7 +55,7 @@ export const AboutMeTab = ({ topics }: AboutMeTabProps) => {
         handleFileOnScreen={handleSetFileOnScreen}
       />
 
-      <div />
+      <MyTechs />
     </S.Container>
   )
 }

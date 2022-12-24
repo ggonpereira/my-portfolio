@@ -2,14 +2,16 @@ import styled from 'styled-components'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 
 export const OpenedFilesContainer = styled.div`
-  width: 99.1%;
+  width: 100%;
+`
+
+export const ContentContainer = styled.div`
+  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
 `
 
 export const OpenedFilesHeader = styled.div`
-  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
-  border-right: 0.1rem solid ${({ theme }) => theme.colors.lines};
   display: flex;
-  max-width: 40vw;
+  max-width: 100rem;
   overflow: auto;
   width: 100%;
 
@@ -51,24 +53,29 @@ export const File = styled.div`
 
 export const OpenedFilesContent = styled.div`
   max-height: calc(100vh - 19.2rem);
-  overflow-y: auto;
+  overflow: auto;
   padding-left: 3rem;
   padding-top: 1rem;
+  max-width: 40vw;
+  height: 100%;
 
-  ::-webkit-scrollbar {
-    width: 0.7rem;
-  }
+  &,
+  pre {
+    ::-webkit-scrollbar {
+      width: 0.7rem;
+    }
 
-  ::-webkit-scrollbar-track {
-    border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
-  }
+    ::-webkit-scrollbar-track {
+      border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
+    }
 
-  ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.secondary.grey};
-  }
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.colors.secondary.grey};
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    background: ${({ theme }) => theme.colors.secondary.darkGrey};
+    ::-webkit-scrollbar-thumb:hover {
+      background: ${({ theme }) => theme.colors.secondary.darkGrey};
+    }
   }
 `
 

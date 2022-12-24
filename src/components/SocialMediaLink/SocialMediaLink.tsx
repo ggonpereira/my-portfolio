@@ -13,7 +13,7 @@ export const SocialMediaLink = ({
   icon,
 }: SocialMediaLinkProps) => {
   return (
-    <S.Link href={url} about="_blank">
+    <S.Link href={url} target="_blank">
       {children}
       <i className={icon} />
     </S.Link>

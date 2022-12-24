@@ -32,29 +32,35 @@ export const OpenedFiles = ({
         </S.StyledSyntaxHighlighter>
       )}
 
-      {openedFiles.length !== 0 && (
-        <S.OpenedFilesHeader>
-          {openedFiles.map((fileTitle) => (
-            <S.File
-              key={fileTitle}
-              onClick={() => handleFileOnScreen(fileTitle)}
-            >
-              <Typography>{fileTitle}</Typography>
+      <S.ContentContainer>
+        {openedFiles.length !== 0 && (
+          <S.OpenedFilesHeader>
+            {openedFiles.map((fileTitle) => (
+              <S.File
+                key={fileTitle}
+                onClick={() => handleFileOnScreen(fileTitle)}
+              >
+                <Typography>{fileTitle}</Typography>
 
-              <i
-                className="ri-close-fill"
-                onClick={(e) => handleCloseIconClick(e, fileTitle)}
-              />
-            </S.File>
-          ))}
-        </S.OpenedFilesHeader>
-      )}
+                <i
+                  className="ri-close-fill"
+                  onClick={(e) => handleCloseIconClick(e, fileTitle)}
+                />
+              </S.File>
+            ))}
+          </S.OpenedFilesHeader>
+        )}
+      </S.ContentContainer>
 
       {filesContent.map((fileContent) => {
         if (fileContent.fileTitle === fileOnScreen) {
           return (
             <S.OpenedFilesContent key={fileContent.fileTitle}>
-              <S.StyledSyntaxHighlighter language="javascript" showLineNumbers>
+              <S.StyledSyntaxHighlighter
+                language="javascript"
+                showLineNumbers
+                wrapLongLines
+              >
                 {fileContent.content}
               </S.StyledSyntaxHighlighter>
             </S.OpenedFilesContent>
