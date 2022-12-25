@@ -11,7 +11,7 @@ export const ContentContainer = styled.div`
 
 export const OpenedFilesHeader = styled.div`
   display: flex;
-  max-width: 100rem;
+  max-width: 55vw;
   overflow: auto;
   width: 100%;
 
