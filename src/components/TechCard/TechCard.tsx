@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import { Typography } from '../Typography'
 import * as S from './TechCard.styles'
 
@@ -6,7 +6,7 @@ interface TechCardProps {
   name: string
   yearsOfExperience: number
   url: string
-  iconClass: string
+  icon: ReactElement
   iconColor: string
 }
 
@@ -14,7 +14,7 @@ export const TechCard = ({
   name,
   yearsOfExperience,
   url,
-  iconClass,
+  icon,
   iconColor,
 }: TechCardProps) => {
   return (
@@ -23,9 +23,7 @@ export const TechCard = ({
         {'//'} {name}
       </Typography>
 
-      <S.TechImage iconColor={iconColor}>
-        <i className={iconClass} />
-      </S.TechImage>
+      <S.TechImage iconColor={iconColor}>{icon}</S.TechImage>
 
       <Typography>{yearsOfExperience} years of experience</Typography>
     </S.Container>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { RiGithubFill } from 'react-icons/ri'
 import { footerSocialMedias } from '../../content/social-medias'
 import { SocialMediaLink } from '../SocialMediaLink'
 import { Typography } from '../Typography'
@@ -23,7 +24,7 @@ export const Footer = () => {
 
       <S.GitHubArea>
         <SocialMediaLink
-          icon="ri-github-fill"
+          icon={<RiGithubFill />}
           url={`https://github.com/${GITHUB_HANDLE}/`}
         >
           <Typography>@{GITHUB_HANDLE}</Typography>
