@@ -44,7 +44,7 @@ const hoverDropdownHeaderCSS = css`
 `
 
 const openContentCSS = css`
-  i:first-of-type {
+  svg:first-of-type {
     transform: rotate(90deg);
   }
 `
@@ -55,6 +55,28 @@ const hideElementCSS = css`
     height: 0rem;
     opacity: 0;
     visibility: hidden;
+  }
+`
+
+const mainAreaBaseCSS = css`
+  align-items: center;
+  display: flex;
+  gap: 0.8rem;
+
+  svg {
+    color: ${({ theme }) => theme.colors.secondary.lightGrey};
+    font-size: 1.6rem;
+    transition: transform 0.25s;
+  }
+
+  p {
+    transition: color 0.25s;
+  }
+
+  :hover {
+    p:first-of-type {
+      color: ${({ theme }) => theme.colors.white};
+    }
   }
 `
 
@@ -122,28 +144,14 @@ export const Content = styled.div`
   user-select: none;
 `
 
-export const MainArea = styled.div<MainAreaProps>`
-  align-items: center;
-  display: flex;
-  gap: 0.8rem;
-
-  svg {
-    font-size: 1.6rem;
-    color: ${({ theme }) => theme.colors.secondary.lightGrey};
-    transition: transform 0.25s;
-  }
-
-  p {
-    transition: color 0.25s;
-  }
-
-  :hover {
-    p:first-of-type {
-      color: ${({ theme }) => theme.colors.white};
-    }
-  }
+export const MainAreaFolder = styled.div<MainAreaProps>`
+  ${mainAreaBaseCSS}
 
   ${({ isOpen }) => isOpen && openContentCSS}
+`
+
+export const MainAreaFile = styled.div`
+  ${mainAreaBaseCSS}
 `
 
 export const ArrowIcon = styled.i<ArrowIconProps>`
@@ -161,9 +169,9 @@ export const FolderIcon = styled.div<FolderIconProps>`
   align-items: center;
   display: flex;
   font-size: 1.6rem;
-  transform: none !important;
 
   svg {
+    transform: none !important;
     fill: ${({ color, theme }) => color || theme.colors.secondary.grey};
   }
 `

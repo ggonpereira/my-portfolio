@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
-import {
-  RiArrowRightSFill,
-  RiArrowRightSLine,
-  RiFolder5Fill,
-} from 'react-icons/ri'
+import { RiArrowRightSFill } from 'react-icons/ri'
 import { Content, TopicObject } from '../layouts/AboutMeTab/interfaces'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
+import { TopicFile } from './TopicFile'
+import { TopicFolder } from './TopicFolder'
 
 type TopicDropdownProps = TopicObject & {
   handleOpenFile: (fileTitle: string) => void
@@ -42,9 +40,15 @@ export const TopicDropdown = ({
   const validateIfContentIsFolder = (_content: Content) =>
     _content.isFolder && !!_content.folderTitle
 
-  const handleItemClick = (itemTitle: string) => {
-    handleFileOnScreen(itemTitle)
-    handleOpenFile(itemTitle)
+  const handleItemClick = (title?: string, onClick?: string) => {
+    if (!title) return
+    if (onClick) {
+      eval(onClick)
+      return
+    }
+
+    handleFileOnScreen(title)
+    handleOpenFile(title)
   }
 
   return (
@@ -59,71 +63,36 @@ export const TopicDropdown = ({
         <S.ContentContainer>
           {content.map((mappedContent, i) => {
             const IS_VALID_FOLDER = validateIfContentIsFolder(mappedContent)
-            const handleOnClick = () => {
-              if (IS_VALID_FOLDER)
-                handleFoldersVisibility(mappedContent.folderTitle)
+
+            const handleOnFolderClick = () => {
+              handleFoldersVisibility(mappedContent.folderTitle)
             }
+
             const IS_FOLDER_OPENED = openedFolders.includes(
               mappedContent.folderTitle || ''
             )
-
-            const handleContentClick = () => {
-              console.info(mappedContent)
-              if (mappedContent.onClick) {
-                eval(mappedContent.onClick)
-              }
-
-              if (mappedContent.contentTitle?.includes('.md')) {
-                handleOpenFile(mappedContent.contentTitle)
-              }
-            }
 
             return (
               <S.Content
                 key={
                   mappedContent.contentTitle || mappedContent.folderTitle || i
                 }
-                onClick={handleContentClick}
               >
-                <S.MainArea
-                  isOpen={IS_VALID_FOLDER && IS_FOLDER_OPENED}
-                  onClick={handleOnClick}
-                >
-                  {mappedContent.isFolder && <RiArrowRightSLine />}
+                {IS_VALID_FOLDER && (
+                  <TopicFolder
+                    isFolderOpened={IS_FOLDER_OPENED}
+                    content={mappedContent}
+                    onFolderClick={handleOnFolderClick}
+                    onItemClick={handleItemClick}
+                  />
+                )}
 
-                  {!mappedContent.isFolder && mappedContent.icon && (
-                    <>{mappedContent.icon}</>
-                  )}
-
-                  {mappedContent.isFolder && (
-                    <S.FolderIcon color={mappedContent.folderColor}>
-                      <RiFolder5Fill />
-                    </S.FolderIcon>
-                  )}
-
-                  <Typography>
-                    {mappedContent.isFolder
-                      ? mappedContent.folderTitle
-                      : mappedContent.contentTitle}
-                  </Typography>
-                </S.MainArea>
-
-                {mappedContent.isFolder &&
-                  IS_FOLDER_OPENED &&
-                  mappedContent.subItems && (
-                    <S.ContentItems>
-                      {mappedContent.subItems.map((item, i) => (
-                        <S.Item
-                          key={`${item.title}-${i}`}
-                          onClick={() => handleItemClick(item.title)}
-                        >
-                          {item.icon}
-
-                          <Typography>{item.title}</Typography>
-                        </S.Item>
-                      ))}
-                    </S.ContentItems>
-                  )}
+                {!IS_VALID_FOLDER && (
+                  <TopicFile
+                    onItemClick={handleItemClick}
+                    content={mappedContent}
+                  />
+                )}
               </S.Content>
             )
           })}
