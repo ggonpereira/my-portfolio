@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { RiArrowRightSFill, RiArrowRightSLine } from 'react-icons/ri'
 import { Content, TopicObject } from '../layouts/AboutMeTab/interfaces'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
@@ -45,7 +46,7 @@ export const TopicDropdown = ({
   return (
     <S.TopicDropdown>
       <S.DropdownHeader isOpen={isTopicOpen} onClick={handleTopicVisibility}>
-        <i className="ri-arrow-right-s-fill" />
+        <RiArrowRightSFill />
 
         <Typography>{topicTitle}</Typography>
       </S.DropdownHeader>
@@ -84,12 +85,10 @@ export const TopicDropdown = ({
                   isOpen={IS_VALID_FOLDER && IS_FOLDER_OPENED}
                   onClick={handleOnClick}
                 >
-                  {mappedContent.isFolder && (
-                    <S.ArrowIcon className="ri-arrow-right-s-line" />
-                  )}
+                  {mappedContent.isFolder && <RiArrowRightSLine />}
 
                   {!mappedContent.isFolder && mappedContent.icon && (
-                    <S.ContentIcon className={mappedContent.icon} />
+                    {mappedContent.icon}
                   )}
 
                   {mappedContent.isFolder && (

@@ -1,9 +1,20 @@
 import { TopicObject } from '../components/layouts/AboutMeTab/interfaces'
+import {
+  RiAccountCircleFill,
+  RiGamepadFill,
+  RiGlobeFill,
+  RiLightbulbFill,
+  RiLinkedinFill,
+  RiMailFill,
+  RiMedalFill,
+  RiMusic2Fill,
+  RiTerminalBoxFill,
+} from 'react-icons/ri'
 
 export const decorationIcons = [
-  'ri-terminal-box-fill',
-  'ri-globe-fill',
-  'ri-gamepad-fill',
+  <RiTerminalBoxFill key={1} />,
+  <RiGlobeFill key={2} />,
+  <RiGamepadFill key={3} />,
 ]
 
 export const topics: TopicObject[] = [
@@ -16,11 +27,11 @@ export const topics: TopicObject[] = [
         folderColor: '#E99287',
         subItems: [
           {
-            icon: 'ri-account-circle-fill',
+            icon: <RiAccountCircleFill />,
             title: 'who-am-i.md',
           },
           {
-            icon: 'ri-medal-fill',
+            icon: <RiMedalFill />,
             title: 'my-goals.md',
           },
           {
@@ -34,7 +45,7 @@ export const topics: TopicObject[] = [
         folderColor: '#870058',
         subItems: [
           {
-            icon: 'ri-rest-time-line',
+            icon: <RiMusic2Fill />,
             title: 'on-my-free-time.md',
           },
           {
@@ -45,7 +56,7 @@ export const topics: TopicObject[] = [
       {
         isFolder: false,
         contentTitle: 'education.md',
-        icon: 'ri-lightbulb-fill',
+        icon: <RiLightbulbFill />,
       },
     ],
   },
@@ -54,13 +65,13 @@ export const topics: TopicObject[] = [
     content: [
       {
         isFolder: false,
-        icon: 'ri-mail-fill',
+        icon: <RiMailFill />,
         contentTitle: 'ggonpereira@gmail.com',
         onClick: 'window.location.href = "mailto:ggonpereira@gmail.com"',
       },
       {
         isFolder: false,
-        icon: 'ri-linkedin-fill',
+        icon: <RiLinkedinFill />,
         contentTitle: 'linkedin',
         onClick:
           'window.open("https://linkedin.com/in/gabriel-gon%C3%A7alves-pereira/", "_blank")',

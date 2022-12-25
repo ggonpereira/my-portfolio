@@ -1,4 +1,5 @@
 import React from 'react'
+import { RiReactjsFill } from 'react-icons/ri'
 import { useTheme } from 'styled-components'
 import { TechCard } from '../TechCard'
 import { Typography } from '../Typography'
@@ -15,7 +16,7 @@ export const MyTechs = () => {
 
       <S.Techs>
         <TechCard
-          iconClass="ri-reactjs-fill"
+          icon={<RiReactjsFill />}
           iconColor="#61dafb"
           name="React.JS"
           url="https://reactjs.org/"

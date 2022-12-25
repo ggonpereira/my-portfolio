@@ -1,10 +1,12 @@
+import { ReactElement } from 'react'
+
 export interface SubItems {
-  icon?: string
+  icon?: ReactElement
   title: string
 }
 
 export interface Content {
-  icon?: string
+  icon?: ReactElement
   isFolder: boolean
   folderColor?: string
   folderTitle?: string

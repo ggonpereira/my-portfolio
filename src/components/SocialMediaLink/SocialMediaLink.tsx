@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import * as S from './SocialMediaLink.styles'
 
 interface SocialMediaLinkProps {
   url: string
-  icon: string
+  icon: ReactElement
   children?: React.ReactNode
 }
 
@@ -15,7 +15,7 @@ export const SocialMediaLink = ({
   return (
     <S.Link href={url} target="_blank">
       {children}
-      <i className={icon} />
+      {icon}
     </S.Link>
   )
 }

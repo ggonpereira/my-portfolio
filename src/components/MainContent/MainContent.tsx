@@ -11,6 +11,8 @@ export const MainContent = () => {
   const RenderComponentByTab = () => {
     if (activeTab === '_hello') return <HelloTab />
     if (activeTab === '_about-me') return <AboutMeTab topics={topics} />
+    if (activeTab === '_projects')
+      return <Projects techs={techs} projects={projects} />
 
     return <HelloTab />
   }

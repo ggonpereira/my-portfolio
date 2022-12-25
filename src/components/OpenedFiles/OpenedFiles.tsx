@@ -1,4 +1,5 @@
 import React from 'react'
+import { RiCloseFill } from 'react-icons/ri'
 import { filesContent, noFilesSelectedState } from '../../content/about-me-tab'
 import { Typography } from '../Typography'
 import * as S from './OpenedFiles.styles'
@@ -42,10 +43,9 @@ export const OpenedFiles = ({
               >
                 <Typography>{fileTitle}</Typography>
 
-                <i
-                  className="ri-close-fill"
-                  onClick={(e) => handleCloseIconClick(e, fileTitle)}
-                />
+                <div onClick={(e) => handleCloseIconClick(e, fileTitle)}>
+                  <RiCloseFill />
+                </div>
               </S.File>
             ))}
           </S.OpenedFilesHeader>

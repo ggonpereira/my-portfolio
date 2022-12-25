@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { decorationIcons } from '../../../content/about-me-tab'
 import { MyTechs } from '../../MyTechs'
 import { OpenedFiles } from '../../OpenedFiles'
@@ -31,8 +31,8 @@ export const AboutMeTab = ({ topics }: AboutMeTabProps) => {
     <S.Container>
       <S.Sidebar>
         <S.DecorationIcons>
-          {decorationIcons.map((icon) => (
-            <i className={icon} key={icon} />
+          {decorationIcons.map((icon, i) => (
+            <Fragment key={i}>{icon}</Fragment>
           ))}
         </S.DecorationIcons>
 
