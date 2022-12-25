@@ -56,7 +56,7 @@ export const OpenedFilesContent = styled.div`
   overflow: auto;
   padding-left: 3rem;
   padding-top: 1rem;
-  max-width: 40vw;
+  max-width: 55vw;
   height: 100%;
 
   &,

@@ -245,6 +245,7 @@ export const filesContent = [
  * • Study computer maintenance, assembly,
  * and complete formatting 
  * • Study of Linux and Windows operating systems
+ * 
 **/`,
   },
 ]
