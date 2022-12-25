@@ -24,8 +24,8 @@ export const FindMeIn = styled.div`
 export const SocialMedia = styled.div`
   border-right: 0.1rem solid ${({ theme }) => theme.colors.lines};
 
-  i {
-    color: ${({ theme }) => theme.colors.secondary.darkGrey};
+  svg {
+    fill: ${({ theme }) => theme.colors.secondary.darkGrey};
     font-size: 2rem;
   }
 `
@@ -39,8 +39,8 @@ export const GitHubArea = styled.div`
     gap: 0.7rem;
     height: 100%;
 
-    i {
-      color: ${({ theme }) => theme.colors.secondary.grey};
+    svg {
+      fill: ${({ theme }) => theme.colors.secondary.grey};
       font-size: 2.2rem;
     }
   }

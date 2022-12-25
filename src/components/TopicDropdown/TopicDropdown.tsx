@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
-import { RiArrowRightSFill, RiArrowRightSLine } from 'react-icons/ri'
+import {
+  RiArrowRightSFill,
+  RiArrowRightSLine,
+  RiFolder5Fill,
+} from 'react-icons/ri'
 import { Content, TopicObject } from '../layouts/AboutMeTab/interfaces'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
@@ -88,14 +92,13 @@ export const TopicDropdown = ({
                   {mappedContent.isFolder && <RiArrowRightSLine />}
 
                   {!mappedContent.isFolder && mappedContent.icon && (
-                    {mappedContent.icon}
+                    <>{mappedContent.icon}</>
                   )}
 
                   {mappedContent.isFolder && (
-                    <S.FolderIcon
-                      className="ri-folder-5-fill"
-                      color={mappedContent.folderColor}
-                    />
+                    <S.FolderIcon color={mappedContent.folderColor}>
+                      <RiFolder5Fill />
+                    </S.FolderIcon>
                   )}
 
                   <Typography>
@@ -114,7 +117,7 @@ export const TopicDropdown = ({
                           key={`${item.title}-${i}`}
                           onClick={() => handleItemClick(item.title)}
                         >
-                          <i className={item.icon || 'ri-markdown-fill'} />
+                          {item.icon}
 
                           <Typography>{item.title}</Typography>
                         </S.Item>

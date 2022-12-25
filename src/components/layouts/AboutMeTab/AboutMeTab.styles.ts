@@ -21,8 +21,8 @@ export const DecorationIcons = styled.div`
   padding: 1.7rem 2.2rem;
   width: fit-content;
 
-  i {
-    color: ${({ theme }) => theme.colors.secondary.grey};
+  svg {
+    fill: ${({ theme }) => theme.colors.secondary.grey};
     cursor: pointer;
     font-size: 2.4rem;
     opacity: 0.4;

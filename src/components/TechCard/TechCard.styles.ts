@@ -23,8 +23,8 @@ export const Container = styled.a`
 `
 
 export const TechImage = styled.div<TechImageProps>`
-  i {
-    color: ${({ iconColor }) => iconColor};
+  svg {
+    fill: ${({ iconColor }) => iconColor};
     font-size: 18rem;
   }
 `

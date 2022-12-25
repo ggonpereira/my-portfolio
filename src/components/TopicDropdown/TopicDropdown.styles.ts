@@ -27,7 +27,7 @@ const openDropdownHeaderCSS = css`
     color: ${({ theme }) => theme.colors.white};
   }
 
-  i {
+  svg {
     opacity: 1;
     transform: rotate(90deg);
   }
@@ -38,7 +38,7 @@ const hoverDropdownHeaderCSS = css`
     color: ${({ theme }) => theme.colors.white};
   }
 
-  i {
+  svg {
     opacity: 1;
   }
 `
@@ -86,8 +86,8 @@ export const DropdownHeader = styled.div<DropdownHeaderProps>`
   user-select: none;
   width: 100%;
 
-  i {
-    color: ${({ theme }) => theme.colors.white};
+  svg {
+    fill: ${({ theme }) => theme.colors.white};
     font-size: 1.7rem;
     opacity: 0.4;
     transition: all 0.25s;
@@ -127,7 +127,9 @@ export const MainArea = styled.div<MainAreaProps>`
   display: flex;
   gap: 0.8rem;
 
-  i {
+  svg {
+    font-size: 1.6rem;
+    color: ${({ theme }) => theme.colors.secondary.lightGrey};
     transition: transform 0.25s;
   }
 
@@ -155,9 +157,15 @@ export const ContentIcon = styled.i`
   transform: none !important;
 `
 
-export const FolderIcon = styled.i<FolderIconProps>`
-  color: ${({ color, theme }) => color || theme.colors.secondary.grey};
+export const FolderIcon = styled.div<FolderIconProps>`
+  align-items: center;
+  display: flex;
   font-size: 1.6rem;
+  transform: none !important;
+
+  svg {
+    fill: ${({ color, theme }) => color || theme.colors.secondary.grey};
+  }
 `
 
 export const ContentItems = styled.div<ContentItemsProps>`
@@ -187,8 +195,8 @@ export const Item = styled.div`
     margin-top: 1rem;
   }
 
-  i {
-    color: ${({ theme }) => theme.colors.secondary.lightGrey};
+  svg {
+    fill: ${({ theme }) => theme.colors.secondary.lightGrey};
     font-size: 1.5rem;
   }
 `

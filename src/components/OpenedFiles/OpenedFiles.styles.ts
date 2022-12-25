@@ -44,8 +44,8 @@ export const File = styled.div`
   white-space: nowrap;
   width: fit-content;
 
-  i {
-    color: ${({ theme }) => theme.colors.secondary.grey};
+  svg {
+    fill: ${({ theme }) => theme.colors.secondary.grey};
     cursor: pointer;
     font-size: 1.8rem;
   }

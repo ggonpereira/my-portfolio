@@ -6,6 +6,7 @@ import {
   RiLightbulbFill,
   RiLinkedinFill,
   RiMailFill,
+  RiMarkdownFill,
   RiMedalFill,
   RiMusic2Fill,
   RiTerminalBoxFill,
@@ -35,6 +36,7 @@ export const topics: TopicObject[] = [
             title: 'my-goals.md',
           },
           {
+            icon: <RiMarkdownFill />,
             title: 'work-experience.md',
           },
         ],
@@ -49,6 +51,7 @@ export const topics: TopicObject[] = [
             title: 'on-my-free-time.md',
           },
           {
+            icon: <RiMarkdownFill />,
             title: 'on-life.md',
           },
         ],
