@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const OpenedFilesContainer = styled.div`
+export const SelectedTechsContainer = styled.div`
   width: 100%;
 `
 
@@ -8,7 +8,7 @@ export const ContentContainer = styled.div`
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
 `
 
-export const OpenedFilesHeader = styled.div`
+export const SelectedTechsHeader = styled.div`
   display: flex;
   max-width: 55vw;
   overflow: auto;
@@ -50,7 +50,7 @@ export const File = styled.div`
   }
 `
 
-export const OpenedFilesContent = styled.div`
+export const SelectedTechsContent = styled.div`
   max-height: calc(100vh - 19.2rem);
   overflow: auto;
   padding-left: 3rem;

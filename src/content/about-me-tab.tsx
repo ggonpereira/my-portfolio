@@ -1,4 +1,3 @@
-import { TopicObject } from '../components/layouts/AboutMeTab/interfaces'
 import {
   RiAccountCircleFill,
   RiGamepadFill,
@@ -11,6 +10,7 @@ import {
   RiMusic2Fill,
   RiTerminalBoxFill,
 } from 'react-icons/ri'
+import { TopicObject } from '../components/TopicDropdown'
 
 export const decorationIcons = [
   <RiTerminalBoxFill key={1} />,

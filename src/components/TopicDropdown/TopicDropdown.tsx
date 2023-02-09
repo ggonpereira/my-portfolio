@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
 import { RiArrowRightSFill } from 'react-icons/ri'
-import { Content, TopicObject } from '../layouts/AboutMeTab/interfaces'
+import { Content } from '../layouts/AboutMeTab/interfaces'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 import { TopicFile } from './TopicFile'
 import { TopicFolder } from './TopicFolder'
 
-type TopicDropdownProps = TopicObject & {
+export interface TopicObject {
+  topicTitle: string
+  content: Content[]
+}
+
+interface TopicDropdownProps extends TopicObject {
   handleOpenFile: (fileTitle: string) => void
   handleFileOnScreen: (fileTitle: string) => void
 }

@@ -6,11 +6,11 @@ interface ButtonProps {
 }
 
 const defaultThemeCSS = css`
-  background-color: ${({ theme }) => theme.colors.primary.darkerBlue};
+  background-color: ${({ theme }) => theme.colors.secondary.darkerGrey};
   color: ${({ theme }) => theme.colors.white};
 
   :hover {
-    background-color: ${({ theme }) => theme.colors.primary.darkBlue};
+    background-color: ${({ theme }) => theme.colors.secondary.darkGrey};
   }
 `
 

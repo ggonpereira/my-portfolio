@@ -1,6 +1,7 @@
 import React from 'react'
 import { RiCloseFill } from 'react-icons/ri'
 import { filesContent, noFilesSelectedState } from '../../content/about-me-tab'
+import { SyntaxHighlighter } from '../SyntaxHighlighter'
 import { Typography } from '../Typography'
 import * as S from './OpenedFiles.styles'
 
@@ -28,9 +29,7 @@ export const OpenedFiles = ({
   return (
     <S.OpenedFilesContainer>
       {openedFiles.length === 0 && (
-        <S.StyledSyntaxHighlighter language="javascript">
-          {noFilesSelectedState}
-        </S.StyledSyntaxHighlighter>
+        <SyntaxHighlighter>{noFilesSelectedState}</SyntaxHighlighter>
       )}
 
       <S.ContentContainer>
@@ -56,13 +55,9 @@ export const OpenedFiles = ({
         if (fileContent.fileTitle === fileOnScreen) {
           return (
             <S.OpenedFilesContent key={fileContent.fileTitle}>
-              <S.StyledSyntaxHighlighter
-                language="javascript"
-                showLineNumbers
-                wrapLongLines
-              >
+              <SyntaxHighlighter showLineNumbers wrapLongLines>
                 {fileContent.content}
-              </S.StyledSyntaxHighlighter>
+              </SyntaxHighlighter>
             </S.OpenedFilesContent>
           )
         }

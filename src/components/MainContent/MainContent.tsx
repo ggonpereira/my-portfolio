@@ -1,8 +1,10 @@
 import React from 'react'
-import { topics } from '../../content/about-me-tab'
+import { topics as aboutMeTopics } from '../../content/about-me-tab'
+import { projects, techs } from '../../content/projects-tab'
 import { useAppContext } from '../../contexts/AppContext'
 import { AboutMeTab } from '../layouts/AboutMeTab'
 import { HelloTab } from '../layouts/HelloTab'
+import { Projects } from '../layouts/Projects'
 import * as S from './MainContent.styles'
 
 export const MainContent = () => {
@@ -10,7 +12,7 @@ export const MainContent = () => {
 
   const RenderComponentByTab = () => {
     if (activeTab === '_hello') return <HelloTab />
-    if (activeTab === '_about-me') return <AboutMeTab topics={topics} />
+    if (activeTab === '_about-me') return <AboutMeTab topics={aboutMeTopics} />
     if (activeTab === '_projects')
       return <Projects techs={techs} projects={projects} />
 

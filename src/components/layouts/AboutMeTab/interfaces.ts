@@ -1,4 +1,5 @@
 import { ReactElement } from 'react'
+import { TopicObject } from '../../TopicDropdown'
 
 export interface SubItems {
   icon?: ReactElement
@@ -13,11 +14,6 @@ export interface Content {
   contentTitle?: string
   subItems?: SubItems[]
   onClick?: string
-}
-
-export interface TopicObject {
-  topicTitle: string
-  content: Content[]
 }
 
 export interface AboutMeTabProps {

@@ -4,6 +4,8 @@ import { VariantTypes } from './Typography'
 interface TypographyProps {
   variantType: VariantTypes
   color?: string
+  weight?: string
+  lineHeight?: string
 }
 
 const typeVariants = {
@@ -23,5 +25,7 @@ export const Typography = styled.p<TypographyProps>`
   ${({ variantType }) => variantType === 'md' && typeVariants.mdVariant}
   ${({ variantType }) => variantType === 'sm' && typeVariants.smVariant}
 
-  color: ${({ color, theme }) => color || theme.colors.secondary.grey}
+  color: ${({ color, theme }) => color || theme.colors.secondary.grey};
+  font-weight: ${({ weight }) => weight};
+  line-height: ${({ lineHeight }) => lineHeight};
 `
