@@ -12,7 +12,7 @@ interface ProjectsProps {
   projects: Project[]
 }
 
-export const Projects = ({ techs, projects }: ProjectsProps) => {
+export const ProjectsTab = ({ techs, projects }: ProjectsProps) => {
   const [selectedTechs, setSelectedTechs] = useState<Tech[]>(techs)
   const [isTopicOpen, setIsTopicOpen] = useState(false)
 

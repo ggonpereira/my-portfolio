@@ -23,6 +23,7 @@ export const theme = {
       salmon: '#e99287',
       lilac: '#c98bdf',
     },
+    error: '#E93E36',
     lines: '#1e2d3d',
     gradients: {
       blue: '#4d5bce',

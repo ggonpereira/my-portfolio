@@ -18,7 +18,7 @@ export const decorationIcons = [
   <RiGamepadFill key={3} />,
 ]
 
-export const topics: TopicObject[] = [
+export const aboutMeTopics: TopicObject[] = [
   {
     topicTitle: 'personal-info',
     content: [

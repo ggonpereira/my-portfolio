@@ -6,6 +6,7 @@ interface ButtonProps {
   btnTheme?: 'default' | 'primary' | 'ghost'
   onClick?: () => void
   children: React.ReactNode
+  type?: 'button' | 'submit'
 }
 
 export const Button = ({
@@ -13,9 +14,15 @@ export const Button = ({
   btnTheme = 'default',
   onClick,
   children,
+  type = 'button',
 }: ButtonProps) => {
   return (
-    <S.Container disabled={disabled} btnTheme={btnTheme} onClick={onClick}>
+    <S.Container
+      disabled={disabled}
+      btnTheme={btnTheme}
+      onClick={onClick}
+      type={type}
+    >
       {children}
     </S.Container>
   )

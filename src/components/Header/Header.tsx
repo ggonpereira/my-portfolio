@@ -11,11 +11,13 @@ export const Header = () => {
 
   return (
     <S.Container>
-      <S.NameArea>
-        <Typography color={colors.secondary.grey}>gabriel-pereira</Typography>
-      </S.NameArea>
+      <S.LeftArea>
+        <S.NameArea>
+          <Typography color={colors.secondary.grey}>gabriel-pereira</Typography>
+        </S.NameArea>
 
-      <TabsArea tabs={tabs} />
+        <TabsArea tabs={tabs} />
+      </S.LeftArea>
 
       <ContactMeArea label="_contact-me" />
     </S.Container>

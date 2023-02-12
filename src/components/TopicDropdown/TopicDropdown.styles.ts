@@ -93,14 +93,14 @@ export const TopicDropdown = styled.div`
   flex-direction: column;
   width: 100%;
 
-  &:not(:first-of-type) {
+  & + & {
     border-top: 0.1rem solid ${({ theme }) => theme.colors.lines};
+    border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
   }
 `
 
 export const DropdownHeader = styled.div<DropdownHeaderProps>`
   align-items: center;
-  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
   cursor: pointer;
   display: flex;
   gap: 0.8rem;
@@ -130,7 +130,7 @@ export const ContentContainer = styled.div<ContentContainerProps>`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 2rem 0 3.1rem 0;
+  padding: 2rem 1.5rem 3.1rem 1.5rem;
 
   ${({ isClosed }) => isClosed && contentContainerClosedCSS}
 `
@@ -140,7 +140,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 1.25rem;
   user-select: none;
 `
 

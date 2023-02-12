@@ -12,8 +12,8 @@ export interface TopicObject {
 }
 
 interface TopicDropdownProps extends TopicObject {
-  handleOpenFile: (fileTitle: string) => void
-  handleFileOnScreen: (fileTitle: string) => void
+  handleOpenFile?: (fileTitle: string) => void
+  handleFileOnScreen?: (fileTitle: string) => void
 }
 
 export const TopicDropdown = ({
@@ -46,11 +46,10 @@ export const TopicDropdown = ({
     _content.isFolder && !!_content.folderTitle
 
   const handleItemClick = (title?: string, onClick?: string) => {
-    if (!title) return
     if (onClick) {
-      eval(onClick)
-      return
+      return eval(onClick)
     }
+    if (!title || !handleFileOnScreen || !handleOpenFile) return
 
     handleFileOnScreen(title)
     handleOpenFile(title)
