@@ -1,61 +1,65 @@
-import React, { Fragment, useState } from 'react'
-import { decorationIcons } from '../../../content/about-me-tab'
-import { MyTechs } from '../../MyTechs'
-import { OpenedFiles } from '../../OpenedFiles'
-import { TopicDropdown } from '../../TopicDropdown'
-import * as S from './AboutMeTab.styles'
+import React, { useState } from 'react'
+import {
+  decorationIcons,
+  filesContent,
+  noFilesSelectedState,
+} from '../../../content/about-me-tab'
+import { ContentStructure } from '../ContentStructure'
+import { ContentHeader } from './ContentHeader'
 import { AboutMeTabProps } from './interfaces'
+import { MainContent } from './MainContent'
+import { SidebarContent } from './SidebarContent'
 
 export const AboutMeTab = ({ topics }: AboutMeTabProps) => {
   const [openedFiles, setOpenedFiles] = useState<string[]>([])
   const [fileOnScreen, setFileOnScreen] = useState('')
 
-  const handleFileVisibility = (fileTitle: string) => {
-    if (!fileTitle || openedFiles.includes(fileTitle)) return
+  const handleOpenFileFromSidebar = (fileName: string) => {
+    if (!openedFiles.includes(fileName)) {
+      setOpenedFiles([...openedFiles, fileName])
+    }
 
-    setOpenedFiles((oldValue) => [...oldValue, fileTitle])
+    setFileOnScreen(fileName)
   }
 
-  const handleCloseFile = (fileTitle: string) => {
-    const filteredList = openedFiles.filter((file) => file !== fileTitle)
+  const handleCloseFile = (fileName: string, e: React.MouseEvent) => {
+    e.stopPropagation()
+    const filteredOpenedFiles = openedFiles.filter((file) => file !== fileName)
 
-    setOpenedFiles(filteredList)
-    setFileOnScreen(filteredList[0])
-  }
+    if (filteredOpenedFiles.length === 0) {
+      setOpenedFiles([])
+      return setFileOnScreen('')
+    }
 
-  const handleSetFileOnScreen = (fileTitle: string) => {
-    setFileOnScreen(fileTitle)
+    setOpenedFiles(filteredOpenedFiles)
+    setFileOnScreen(filteredOpenedFiles[0])
   }
 
   return (
-    <S.Container>
-      <S.Sidebar>
-        <S.DecorationIcons>
-          {decorationIcons.map((icon, i) => (
-            <Fragment key={i}>{icon}</Fragment>
-          ))}
-        </S.DecorationIcons>
-
-        <S.MainSidebar>
-          {topics.map((topic, i) => (
-            <TopicDropdown
-              key={i}
-              {...topic}
-              handleOpenFile={handleFileVisibility}
-              handleFileOnScreen={handleSetFileOnScreen}
-            />
-          ))}
-        </S.MainSidebar>
-      </S.Sidebar>
-
-      <OpenedFiles
-        openedFiles={openedFiles}
-        handleCloseFile={handleCloseFile}
-        fileOnScreen={fileOnScreen}
-        handleFileOnScreen={handleSetFileOnScreen}
-      />
-
-      <MyTechs />
-    </S.Container>
+    <ContentStructure
+      sidebarContent={
+        <SidebarContent
+          decorationIcons={decorationIcons}
+          handleOpenFileFromSidebar={handleOpenFileFromSidebar}
+          topics={topics}
+        />
+      }
+      sidebarContentInitialWidth={'45rem'}
+      contentHeader={
+        <ContentHeader
+          handleCloseFile={handleCloseFile}
+          openedFiles={openedFiles}
+          handleSetFileOnScreen={setFileOnScreen}
+        />
+      }
+      mainContent={
+        <MainContent
+          fileOnScreen={fileOnScreen}
+          filesContent={filesContent}
+          noFilesSelectedState={noFilesSelectedState}
+          openedFiles={openedFiles}
+        />
+      }
+    />
   )
 }

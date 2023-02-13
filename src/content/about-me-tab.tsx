@@ -10,7 +10,7 @@ import {
   RiMusic2Fill,
   RiTerminalBoxFill,
 } from 'react-icons/ri'
-import { TopicObject } from '../components/TopicDropdown'
+import { TopicObject } from '../types/Topic'
 
 export const decorationIcons = [
   <RiTerminalBoxFill key={1} />,

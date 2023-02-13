@@ -1,8 +1,8 @@
 export interface ContentStructureProps {
   sidebarContent?: React.ReactNode
-  sidebarContentInitialWidth?: number
+  sidebarContentInitialWidth?: number | string
   contentHeader?: React.ReactNode
-  contentHeaderInitialWidth?: number
+  contentHeaderInitialWidth?: number | string
   mainContent: React.ReactNode
-  mainContentInitialWidth?: number
+  mainContentInitialWidth?: number | string
 }

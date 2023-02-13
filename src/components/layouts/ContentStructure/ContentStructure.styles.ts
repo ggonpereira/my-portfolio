@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 type SidebarProps = {
-  sidebarContentInitialWidth?: number
+  sidebarContentInitialWidth?: number | string
 }
 
 type ContentHeaderProps = {
-  contentHeaderInitialWidth?: number
+  contentHeaderInitialWidth?: number | string
 }
 
 type MainContentProps = {
-  mainContentInitialWidth?: number
+  mainContentInitialWidth?: number | string
 }
 
 export const Container = styled.div`

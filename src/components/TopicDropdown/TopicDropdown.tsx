@@ -1,26 +1,20 @@
 import React, { useState } from 'react'
 import { RiArrowRightSFill } from 'react-icons/ri'
-import { Content } from '../layouts/AboutMeTab/interfaces'
+import { Content } from '../../types/Content'
+import { TopicObject } from '../../types/Topic'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 import { TopicFile } from './TopicFile'
 import { TopicFolder } from './TopicFolder'
 
-export interface TopicObject {
-  topicTitle: string
-  content: Content[]
-}
-
 interface TopicDropdownProps extends TopicObject {
-  handleOpenFile?: (fileTitle: string) => void
-  handleFileOnScreen?: (fileTitle: string) => void
+  handleOpenFileFromSidebar: (fileTitle: string) => void
 }
 
 export const TopicDropdown = ({
   topicTitle,
   content,
-  handleOpenFile,
-  handleFileOnScreen,
+  handleOpenFileFromSidebar,
 }: TopicDropdownProps) => {
   const [isTopicOpen, setIsTopicOpen] = useState(false)
   const [openedFolders, setOpenedFolders] = useState<string[]>([])
@@ -49,10 +43,8 @@ export const TopicDropdown = ({
     if (onClick) {
       return eval(onClick)
     }
-    if (!title || !handleFileOnScreen || !handleOpenFile) return
-
-    handleFileOnScreen(title)
-    handleOpenFile(title)
+    if (!title) return
+    handleOpenFileFromSidebar(title)
   }
 
   return (

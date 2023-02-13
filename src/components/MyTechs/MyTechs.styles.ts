@@ -4,6 +4,7 @@ export const Container = styled.div`
   border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
   flex: 1;
   height: 100%;
+  max-width: 42.5rem;
 `
 
 export const Header = styled.header`
