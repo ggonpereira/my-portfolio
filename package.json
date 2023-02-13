@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "prepare": "husky install",
+    "lint": "next lint --fix && yarn tsc --noEmit --skipLibCheck",
+    "ts:check": "yarn tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
     "@formspree/react": "^2.4.1",
     "@types/react-icons": "^3.0.0",
     "eslint": "8.29.0",
+    "husky": "^8.0.3",
     "next": "13.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",

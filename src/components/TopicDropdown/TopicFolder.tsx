@@ -1,6 +1,6 @@
 import React from 'react'
 import { RiArrowRightSLine, RiFolder5Fill } from 'react-icons/ri'
-import { Content } from '../layouts/AboutMeTab/interfaces'
+import { Content } from '../../types/Content'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 

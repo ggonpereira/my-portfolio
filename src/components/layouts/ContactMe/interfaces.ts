@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { TopicObject } from '../../TopicDropdown'
+import { TopicObject } from '../../../types/Topic'
 
 export interface SubItems {
   icon?: ReactElement

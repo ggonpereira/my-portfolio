@@ -1,5 +1,5 @@
 import React from 'react'
-import { Content } from '../layouts/AboutMeTab/interfaces'
+import { Content } from '../../types/Content'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 

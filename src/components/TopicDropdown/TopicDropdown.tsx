@@ -8,7 +8,7 @@ import { TopicFile } from './TopicFile'
 import { TopicFolder } from './TopicFolder'
 
 interface TopicDropdownProps extends TopicObject {
-  handleOpenFileFromSidebar: (fileTitle: string) => void
+  handleOpenFileFromSidebar?: (fileTitle: string) => void
 }
 
 export const TopicDropdown = ({
@@ -43,7 +43,7 @@ export const TopicDropdown = ({
     if (onClick) {
       return eval(onClick)
     }
-    if (!title) return
+    if (!title || !handleOpenFileFromSidebar) return
     handleOpenFileFromSidebar(title)
   }
 

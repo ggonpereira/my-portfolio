@@ -1,6 +1,6 @@
 import { RiLinkedinFill, RiMailFill } from 'react-icons/ri'
 import { BiLinkExternal } from 'react-icons/bi'
-import { TopicObject } from '../components/TopicDropdown'
+import { TopicObject } from '../types/Topic'
 
 export const contactMeTopics: TopicObject[] = [
   {
@@ -28,20 +28,20 @@ export const contactMeTopics: TopicObject[] = [
         isFolder: false,
         icon: <BiLinkExternal />,
         contentTitle: 'Instagram account',
-        onClick: 'window.location.href = "https://instagram.com/ggpereira9"',
+        onClick: 'window.open("https://instagram.com/ggpereira9", "_blank")',
       },
       {
         isFolder: false,
         icon: <BiLinkExternal />,
         contentTitle: 'GitHub account',
-        onClick: 'window.location.href = "https://github.com/ggonpereira"',
+        onClick: 'window.open("https://github.com/ggonpereira", "_blank")',
       },
       {
         isFolder: false,
         icon: <BiLinkExternal />,
-        contentTitle: 'Codewars account',
+        contentTitle: 'CodeWars account',
         onClick:
-          'window.location.href = "https://codewars.com/users/ggonpereira"',
+          'window.open("https://codewars.com/users/ggonpereira", "_blank")',
       },
     ],
   },
