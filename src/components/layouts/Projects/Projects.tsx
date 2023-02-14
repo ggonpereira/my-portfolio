@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { RiArrowRightSFill } from 'react-icons/ri'
+import { noTechsSelectedState } from '../../../content/projects-tab'
 import { Project } from '../../../types/Project'
 import { Tech } from '../../../types/Tech'
-import { Checkbox } from '../../Checkbox'
-import { SelectedTechs } from '../../SelectedTechs'
-import { Typography } from '../../Typography'
-import * as S from './Projects.styles'
+import { ContentStructure } from '../ContentStructure'
+import { ContentHeader } from './ContentHeader'
+import { MainContent } from './MainContent'
+import { SidebarContent } from './SidebarContent'
 
 interface ProjectsProps {
   techs: Tech[]
@@ -16,12 +16,12 @@ export const ProjectsTab = ({ techs, projects }: ProjectsProps) => {
   const [selectedTechs, setSelectedTechs] = useState<Tech[]>(techs)
   const [isTopicOpen, setIsTopicOpen] = useState(false)
 
+  const verifyIfTechIsSelected = (tech: Tech) =>
+    selectedTechs.some((stored) => stored.name === tech.name)
+
   const handleTopicVisibility = () => {
     setIsTopicOpen((oldValue) => !oldValue)
   }
-
-  const verifyIfTechIsSelected = (tech: Tech) =>
-    selectedTechs.some((stored) => stored.name === tech.name)
 
   const handleTechClick = (tech: Tech) => {
     const isTechAlreadySelected = verifyIfTechIsSelected(tech)
@@ -40,50 +40,39 @@ export const ProjectsTab = ({ techs, projects }: ProjectsProps) => {
     setSelectedTechs([])
   }
 
+  const selectedTechsInOneString = selectedTechs.reduce(
+    (acc, cur, index) =>
+      acc + cur.name + (index !== selectedTechs.length - 1 ? '; ' : ''),
+    ''
+  )
+
   return (
-    <S.Container>
-      <S.Sidebar>
-        <S.Dropdown>
-          <S.DropdownHeader
-            isOpen={isTopicOpen}
-            onClick={handleTopicVisibility}
-          >
-            <RiArrowRightSFill />
-
-            <Typography>projects</Typography>
-          </S.DropdownHeader>
-
-          <S.DropdownContent isOpen={isTopicOpen}>
-            <S.TechsContainer>
-              {techs.map((tech) => {
-                const isTechSelected = verifyIfTechIsSelected(tech)
-
-                return (
-                  <S.Tech
-                    key={tech.name}
-                    isSelected={isTechSelected}
-                    onClick={() => handleTechClick(tech)}
-                  >
-                    <Checkbox isSelected={isTechSelected} disabled={false} />
-
-                    <S.TechContent>
-                      {tech.icon}
-
-                      <Typography>{tech.name}</Typography>
-                    </S.TechContent>
-                  </S.Tech>
-                )
-              })}
-            </S.TechsContainer>
-          </S.DropdownContent>
-        </S.Dropdown>
-      </S.Sidebar>
-
-      <SelectedTechs
-        selectedTechs={selectedTechs}
-        handleUnselectAllTechs={handleUnselectAllTechs}
-        projects={projects}
+    <>
+      <ContentStructure
+        sidebarContent={
+          <SidebarContent
+            isTopicOpen={isTopicOpen}
+            verifyIfTechIsSelected={verifyIfTechIsSelected}
+            techs={techs}
+            handleTechClick={handleTechClick}
+            handleTopicVisibility={handleTopicVisibility}
+          />
+        }
+        contentHeader={
+          <ContentHeader
+            handleUnselectAllTechs={handleUnselectAllTechs}
+            selectedTechsInOneString={selectedTechsInOneString}
+            selectedTechs={selectedTechs}
+          />
+        }
+        mainContent={
+          <MainContent
+            noTechsSelectedState={noTechsSelectedState}
+            projects={projects}
+            selectedTechs={selectedTechs}
+          />
+        }
       />
-    </S.Container>
+    </>
   )
 }

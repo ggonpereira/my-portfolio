@@ -1,11 +1,8 @@
 import styled from 'styled-components'
 
-export const SelectedTechsContainer = styled.div`
-  width: 100%;
-`
-
 export const ContentContainer = styled.div`
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
+  width: 100%;
 `
 
 export const SelectedTechsHeader = styled.div`
@@ -47,33 +44,5 @@ export const File = styled.div`
     fill: ${({ theme }) => theme.colors.secondary.grey};
     cursor: pointer;
     font-size: 1.8rem;
-  }
-`
-
-export const SelectedTechsContent = styled.div`
-  max-height: calc(100vh - 19.2rem);
-  overflow: auto;
-  padding-left: 3rem;
-  padding-top: 1rem;
-  max-width: 55vw;
-  height: 100%;
-
-  &,
-  pre {
-    ::-webkit-scrollbar {
-      width: 0.7rem;
-    }
-
-    ::-webkit-scrollbar-track {
-      border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: ${({ theme }) => theme.colors.secondary.grey};
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: ${({ theme }) => theme.colors.secondary.darkGrey};
-    }
   }
 `
