@@ -17,7 +17,7 @@ export const Tab = ({
 }: TabProps) => {
   return (
     <S.Container isActive={isActive} onClick={() => setTabActive(tabName)}>
-      <Typography>{children}</Typography>
+      <Typography lineHeight="21px">{children}</Typography>
     </S.Container>
   )
 }

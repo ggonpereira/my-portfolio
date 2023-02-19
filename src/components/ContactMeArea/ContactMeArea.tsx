@@ -1,6 +1,6 @@
 import React from 'react'
 import { useAppContext } from '../../contexts/AppContext'
-import { Typography } from '../Typography'
+import { Tab } from '../Tab'
 import * as S from './ContactMeArea.styles'
 
 interface ContactMeAreaProps {
@@ -11,11 +11,14 @@ export const ContactMeArea = ({ label }: ContactMeAreaProps) => {
   const { activeTab, handleChangeTab } = useAppContext()
 
   return (
-    <S.Container
-      isActive={activeTab === label}
-      onClick={() => handleChangeTab(label)}
-    >
-      <Typography>{label}</Typography>
+    <S.Container>
+      <Tab
+        isActive={activeTab === label}
+        setTabActive={handleChangeTab}
+        tabName={label}
+      >
+        {label}
+      </Tab>
     </S.Container>
   )
 }

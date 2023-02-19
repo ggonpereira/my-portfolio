@@ -15,11 +15,22 @@ export const Footer = () => {
           <Typography>find me in:</Typography>
         </S.FindMeIn>
 
-        {footerSocialMedias.map(({ icon, name, url }) => (
-          <S.SocialMedia key={name}>
-            <SocialMediaLink icon={icon} url={url} />
-          </S.SocialMedia>
-        ))}
+        <S.SocialMediaIcons>
+          {footerSocialMedias.map(({ icon, name, url }) => (
+            <S.SocialMedia key={name}>
+              <SocialMediaLink icon={icon} url={url} />
+            </S.SocialMedia>
+          ))}
+
+          <S.OnlyGitHubIcon>
+            <S.SocialMedia>
+              <SocialMediaLink
+                icon={<RiGithubFill />}
+                url={`https://github.com/${GITHUB_HANDLE}/`}
+              />
+            </S.SocialMedia>
+          </S.OnlyGitHubIcon>
+        </S.SocialMediaIcons>
       </S.SocialMediaArea>
 
       <S.GitHubArea>

@@ -1,24 +1,12 @@
-import styled, { css } from 'styled-components'
-import { Container as ContainerPrimitive } from '../Tab/Tab.styles'
+import styled from 'styled-components'
 
-interface ContainerProps {
-  isActive: boolean
-}
+export const Container = styled.div`
+  display: flex;
+  height: 100%;
 
-const isActiveCSS = css`
-  border-color: ${({ theme }) => theme.colors.accent.orange};
-  color: ${({ theme }) => theme.colors.white};
-`
-
-export const Container = styled(ContainerPrimitive)<ContainerProps>`
-  &:last-of-type {
-    border-right: none;
+  button {
+    width: 100%;
+    border-top-right-radius: 8px;
+    border-right: none !important;
   }
-
-  justify-self: flex-end;
-  width: fit-content;
-
-  ${({ isActive }) => isActive && isActiveCSS}
-
-  border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
 `

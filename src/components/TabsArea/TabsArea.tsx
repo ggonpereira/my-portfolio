@@ -5,13 +5,14 @@ import * as S from './TabsArea.styles'
 
 interface TabsAreaProps {
   tabs: string[]
+  isHorizontal?: boolean
 }
 
-export const TabsArea = ({ tabs }: TabsAreaProps) => {
+export const TabsArea = ({ tabs, isHorizontal }: TabsAreaProps) => {
   const { activeTab, handleChangeTab } = useAppContext()
 
   return (
-    <S.Container>
+    <S.Container isHorizontal={isHorizontal}>
       {tabs.map((tab) => (
         <Tab
           isActive={activeTab === tab}

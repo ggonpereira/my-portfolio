@@ -8,18 +8,35 @@ interface HeadingProps {
 
 const typeVariants = {
   headlineVariant: {
-    fontSize: '6.2rem',
+    desktop: {
+      fontSize: '6.2rem',
+    },
+    mobile: {
+      fontSize: '4.6rem',
+    },
   },
   subHeadlineVariant: {
-    fontSize: '3.2rem',
+    desktop: {
+      fontSize: '3.2rem',
+    },
+    mobile: {
+      fontSize: '2rem',
+    },
   },
 }
 
 export const Heading = styled.h2<HeadingProps>`
   ${({ variantType }) =>
-    variantType === 'headline' && typeVariants.headlineVariant}
+    variantType === 'headline' && typeVariants.headlineVariant.desktop}
   ${({ variantType }) =>
-    variantType === 'subheadline' && typeVariants.subHeadlineVariant}
+    variantType === 'subheadline' && typeVariants.subHeadlineVariant.desktop}
 
-  color: ${({ color }) => color}
+  @media all and (max-width: 812px) {
+    ${({ variantType }) =>
+      variantType === 'headline' && typeVariants.headlineVariant.mobile}
+    ${({ variantType }) =>
+      variantType === 'subheadline' && typeVariants.subHeadlineVariant.mobile}
+  }
+
+  color: ${({ color }) => color};
 `

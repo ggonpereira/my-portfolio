@@ -8,4 +8,5 @@ export const Container = styled.div`
   flex-direction: column;
   height: calc(100vh - 4rem);
   margin: 2rem;
+  position: relative;
 `
