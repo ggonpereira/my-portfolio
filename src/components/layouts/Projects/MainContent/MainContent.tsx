@@ -19,10 +19,7 @@ export const MainContent = ({
         </S.NoTechSelectedWrapper>
       )}
 
-      <MyProjects
-        selectedTechs={selectedTechs}
-        projects={[...projects, ...projects]}
-      />
+      <MyProjects selectedTechs={selectedTechs} projects={projects} />
     </>
   )
 }

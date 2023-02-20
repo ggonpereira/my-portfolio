@@ -53,7 +53,7 @@ export const ProjectsTab = ({ techs, projects }: ProjectsProps) => {
           <SidebarContent
             isTopicOpen={isTopicOpen}
             verifyIfTechIsSelected={verifyIfTechIsSelected}
-            techs={[...techs, ...techs]}
+            techs={techs}
             handleTechClick={handleTechClick}
             handleTopicVisibility={handleTopicVisibility}
           />
