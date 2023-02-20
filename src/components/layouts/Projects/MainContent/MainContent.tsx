@@ -2,6 +2,7 @@ import React from 'react'
 import { MainContentProps } from './interfaces'
 import { SyntaxHighlighter } from '../../../SyntaxHighlighter'
 import { MyProjects } from '../../../MyProjects'
+import * as S from './MainContent.styles'
 
 export const MainContent = ({
   selectedTechs,
@@ -11,10 +12,17 @@ export const MainContent = ({
   return (
     <>
       {selectedTechs.length === 0 && (
-        <SyntaxHighlighter>{noTechsSelectedState}</SyntaxHighlighter>
+        <S.NoTechSelectedWrapper>
+          <SyntaxHighlighter wrapLongLines>
+            {noTechsSelectedState}
+          </SyntaxHighlighter>
+        </S.NoTechSelectedWrapper>
       )}
 
-      <MyProjects selectedTechs={selectedTechs} projects={projects} />
+      <MyProjects
+        selectedTechs={selectedTechs}
+        projects={[...projects, ...projects]}
+      />
     </>
   )
 }

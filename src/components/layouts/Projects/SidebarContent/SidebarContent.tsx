@@ -14,6 +14,10 @@ export const SidebarContent = ({
 }: SidebarContentProps) => {
   return (
     <S.Dropdown>
+      <S.ActualPageInform>
+        <Typography>_projects</Typography>
+      </S.ActualPageInform>
+
       <S.DropdownHeader isOpen={isTopicOpen} onClick={handleTopicVisibility}>
         <RiArrowRightSFill />
 

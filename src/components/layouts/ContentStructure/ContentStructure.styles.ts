@@ -30,6 +30,7 @@ export const Sidebar = styled.aside<SidebarProps>`
 
   @media all and (max-width: 460px) {
     border-right: none;
+    flex: 1;
     width: 100%;
   }
 `
@@ -46,6 +47,10 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @media all and (max-width: 460px) {
+    height: 100%;
+  }
 `
 
 export const ContentHeader = styled.div<ContentHeaderProps>`

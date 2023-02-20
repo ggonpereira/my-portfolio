@@ -6,6 +6,11 @@ type TechIconProps = {
 
 export const Container = styled.div`
   padding: 4rem 5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.6rem;
 `
 
 export const Project = styled.div`

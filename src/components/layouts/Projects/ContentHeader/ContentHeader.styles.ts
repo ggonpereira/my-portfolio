@@ -3,6 +3,11 @@ import styled from 'styled-components'
 export const ContentContainer = styled.div`
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
   width: 100%;
+
+  @media all and (max-width: 460px) {
+    margin-top: 16px;
+    border-top: 0.1rem solid ${({ theme }) => theme.colors.lines};
+  }
 `
 
 export const SelectedTechsHeader = styled.div`

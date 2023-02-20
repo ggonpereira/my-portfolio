@@ -13,7 +13,7 @@ type TechProps = {
 }
 
 const hiddenDropdownContentCSS = css`
-  visibility: hidden;
+  display: none;
 `
 
 const openDropdownHeaderCSS = css`
@@ -65,6 +65,19 @@ export const Dropdown = styled.div`
   }
 `
 
+export const ActualPageInform = styled.div`
+  display: none;
+  padding: 16px;
+
+  p {
+    color: ${({ theme }) => theme.colors.white};
+  }
+
+  @media all and (max-width: 720px) {
+    display: flex;
+  }
+`
+
 export const DropdownHeader = styled.div<DropdownHeaderProps>`
   align-items: center;
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
@@ -90,6 +103,19 @@ export const DropdownHeader = styled.div<DropdownHeaderProps>`
 
   :hover {
     ${hoverDropdownHeaderCSS}
+  }
+
+  @media all and (max-width: 720px) {
+    background-color: ${({ theme }) => theme.colors.lines};
+    border-bottom: 0.3rem solid ${({ theme }) => theme.colors.primary.darkBlue};
+    color: ${({ theme }) => theme.colors.white};
+
+    svg,
+    p {
+      color: ${({ theme }) => theme.colors.white};
+      fill: ${({ theme }) => theme.colors.white};
+      opacity: 1;
+    }
   }
 `
 
