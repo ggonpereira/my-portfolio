@@ -6,17 +6,23 @@ import * as S from './TabsArea.styles'
 interface TabsAreaProps {
   tabs: string[]
   isHorizontal?: boolean
+  toggleMenu?: () => void
 }
 
-export const TabsArea = ({ tabs, isHorizontal }: TabsAreaProps) => {
+export const TabsArea = ({ tabs, isHorizontal, toggleMenu }: TabsAreaProps) => {
   const { activeTab, handleChangeTab } = useAppContext()
+
+  const handleTabClick = (tab: string) => {
+    handleChangeTab(tab)
+    toggleMenu && toggleMenu()
+  }
 
   return (
     <S.Container isHorizontal={isHorizontal}>
       {tabs.map((tab) => (
         <Tab
           isActive={activeTab === tab}
-          setTabActive={handleChangeTab}
+          setTabActive={handleTabClick}
           tabName={tab}
           key={tab}
         >

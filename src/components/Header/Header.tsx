@@ -32,7 +32,7 @@ const MobileHeader = () => {
           <>
             <S.MainArea>
               <S.LinksArea>
-                <TabsArea tabs={tabs} isHorizontal />
+                <TabsArea tabs={tabs} isHorizontal toggleMenu={toggleMenu} />
                 <ContactMeArea label="_contact-me" />
               </S.LinksArea>
             </S.MainArea>
