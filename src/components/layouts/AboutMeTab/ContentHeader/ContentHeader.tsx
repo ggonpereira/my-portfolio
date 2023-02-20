@@ -3,6 +3,7 @@ import { ContentHeaderProps } from './interfaces'
 import * as S from './ContentHeader.styles'
 import { Typography } from '../../../Typography'
 import { RiCloseFill } from 'react-icons/ri'
+import { makeElementTabSelectable } from '../../../../utils/helpers'
 
 export const ContentHeader = ({
   openedFiles,
@@ -17,6 +18,7 @@ export const ContentHeader = ({
             <S.File
               key={fileTitle}
               onClick={() => handleSetFileOnScreen(fileTitle)}
+              {...makeElementTabSelectable}
             >
               <Typography>{fileTitle}</Typography>
 
@@ -24,6 +26,7 @@ export const ContentHeader = ({
                 onClick={(e: React.MouseEvent<any>) =>
                   handleCloseFile(fileTitle, e)
                 }
+                {...makeElementTabSelectable}
               >
                 <RiCloseFill />
               </div>

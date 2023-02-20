@@ -1,6 +1,7 @@
 import React from 'react'
 import { RiArrowRightSLine, RiFolder5Fill } from 'react-icons/ri'
 import { Content } from '../../types/Content'
+import { makeElementTabSelectable } from '../../utils/helpers'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 
@@ -19,7 +20,11 @@ export const TopicFolder = ({
 }: TopicFolderProps) => {
   return (
     <>
-      <S.MainAreaFolder isOpen={isFolderOpened} onClick={onFolderClick}>
+      <S.MainAreaFolder
+        isOpen={isFolderOpened}
+        onClick={onFolderClick}
+        {...makeElementTabSelectable}
+      >
         {content.isFolder && <RiArrowRightSLine />}
 
         {!content.isFolder && content.icon && <>{content.icon}</>}
@@ -39,6 +44,7 @@ export const TopicFolder = ({
             <S.Item
               key={`${item.title}-${i}`}
               onClick={() => onItemClick(item.title)}
+              {...makeElementTabSelectable}
             >
               {item.icon}
 

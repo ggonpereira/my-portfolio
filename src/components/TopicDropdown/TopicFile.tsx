@@ -1,5 +1,6 @@
 import React from 'react'
 import { Content } from '../../types/Content'
+import { makeElementTabSelectable } from '../../utils/helpers'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 
@@ -12,6 +13,7 @@ export const TopicFile = ({ onItemClick, content }: TopicFileProps) => {
   return (
     <S.MainAreaFile
       onClick={() => onItemClick(content.contentTitle, content.onClick)}
+      {...makeElementTabSelectable}
     >
       {content.icon && <>{content.icon}</>}
 
