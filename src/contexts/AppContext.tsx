@@ -1,8 +1,9 @@
+import { useRouter } from 'next/router'
 import React, { createContext, useCallback, useContext, useState } from 'react'
 
 interface AppContextProps {
-  activeTab: string
-  handleChangeTab: (tab: string) => void
+  activePage: string
+  handleChangePage: (tab: string) => void
 }
 
 interface AppProviderProps {
@@ -12,22 +13,24 @@ interface AppProviderProps {
 export const AppContext = createContext({} as AppContextProps)
 
 export function AppProvider({ children }: AppProviderProps) {
-  const [activeTab, setActiveTab] = useState('_hello')
+  const [activePage, setActivePage] = useState('_hello')
+  const router = useRouter()
 
-  const handleChangeTab = useCallback(
+  const handleChangePage = useCallback(
     (tab: string) => {
-      if (tab !== activeTab) {
-        setActiveTab(tab)
+      if (tab !== activePage) {
+        setActivePage(tab)
+        router.push(tab.replace('_', ''))
       }
     },
-    [activeTab]
+    [activePage, router]
   )
 
   return (
     <AppContext.Provider
       value={{
-        activeTab,
-        handleChangeTab,
+        activePage,
+        handleChangePage,
       }}
     >
       {children}

@@ -10,10 +10,10 @@ interface TabsAreaProps {
 }
 
 export const TabsArea = ({ tabs, isHorizontal, toggleMenu }: TabsAreaProps) => {
-  const { activeTab, handleChangeTab } = useAppContext()
+  const { activePage, handleChangePage } = useAppContext()
 
   const handleTabClick = (tab: string) => {
-    handleChangeTab(tab)
+    handleChangePage(tab)
     toggleMenu && toggleMenu()
   }
 
@@ -21,7 +21,7 @@ export const TabsArea = ({ tabs, isHorizontal, toggleMenu }: TabsAreaProps) => {
     <S.Container isHorizontal={isHorizontal}>
       {tabs.map((tab) => (
         <Tab
-          isActive={activeTab === tab}
+          isActive={activePage === tab}
           setTabActive={handleTabClick}
           tabName={tab}
           key={tab}

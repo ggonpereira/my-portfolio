@@ -1,3 +1,3 @@
-import { projects } from '../content/projects-tab'
+import { projects } from '../content/projects'
 
 export type Project = typeof projects[0]

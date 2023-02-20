@@ -4,13 +4,16 @@ import { GlobalStyle } from '../styles/global'
 import { ThemeProvider } from 'styled-components'
 import { theme } from '../styles/themes'
 import { AppProvider } from '../contexts/AppContext'
+import { RoutesWrapper } from '../components/layouts/RoutesWrapper'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <AppProvider>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <RoutesWrapper>
+          <Component {...pageProps} />
+        </RoutesWrapper>{' '}
       </ThemeProvider>
     </AppProvider>
   )

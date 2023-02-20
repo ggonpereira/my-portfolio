@@ -1,3 +1,3 @@
-import { techs } from '../content/projects-tab'
+import { techs } from '../content/projects'
 
 export type Tech = typeof techs[0]

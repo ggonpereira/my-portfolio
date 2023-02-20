@@ -1,5 +1,5 @@
 import { FieldErrors, UseFormRegister } from 'react-hook-form'
-import { ContactFormData } from '../layouts/ContactMe/interfaces'
+import { ContactFormData } from '../layouts/pages/ContactMe/interfaces'
 
 export interface LabelledInputProps {
   name: string

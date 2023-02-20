@@ -8,13 +8,13 @@ interface ContactMeAreaProps {
 }
 
 export const ContactMeArea = ({ label }: ContactMeAreaProps) => {
-  const { activeTab, handleChangeTab } = useAppContext()
+  const { activePage, handleChangePage } = useAppContext()
 
   return (
     <S.Container>
       <Tab
-        isActive={activeTab === label}
-        setTabActive={handleChangeTab}
+        isActive={activePage === label}
+        setTabActive={handleChangePage}
         tabName={label}
       >
         {label}
