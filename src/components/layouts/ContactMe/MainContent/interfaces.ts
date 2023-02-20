@@ -15,4 +15,5 @@ export interface MainContentProps {
   errors: FieldErrors<ContactFormData>
   state: FormSpreeState
   codeSnippet: string
+  isValid: boolean
 }

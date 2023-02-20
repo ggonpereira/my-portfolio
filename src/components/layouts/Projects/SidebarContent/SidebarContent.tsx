@@ -1,6 +1,6 @@
 import React from 'react'
 import { RiArrowRightSFill } from 'react-icons/ri'
-import { makeElementTabSelectable } from '../../../../utils/helpers'
+import { makeElementTabSelectable } from '../../../../common/helpers/functions'
 import { Checkbox } from '../../../Checkbox'
 import { Typography } from '../../../Typography'
 import { SidebarContentProps } from './interfaces'

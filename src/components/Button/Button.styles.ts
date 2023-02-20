@@ -50,6 +50,11 @@ export const Container = styled.button<ButtonProps>`
   ${({ btnTheme }) => btnTheme === 'ghost' && ghostThemeCSS}
 
   &:disabled {
-    opacity: 0.5;
+    &,
+    &:hover {
+      cursor: not-allowed;
+      background-color: ${({ theme }) => theme.colors.lines};
+      opacity: 0.5;
+    }
   }
 `

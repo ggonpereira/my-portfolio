@@ -1,7 +1,7 @@
 import React from 'react'
 import { RiArrowRightSLine, RiFolder5Fill } from 'react-icons/ri'
+import { makeElementTabSelectable } from '../../common/helpers/functions'
 import { Content } from '../../types/Content'
-import { makeElementTabSelectable } from '../../utils/helpers'
 import { Typography } from '../Typography'
 import * as S from './TopicDropdown.styles'
 
