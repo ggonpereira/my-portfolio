@@ -5,7 +5,7 @@ export const ContentContainer = styled.div`
   width: 100%;
 
   @media all and (max-width: 460px) {
-    margin-top: 16px;
+    margin-top: 1.6rem;
     border-top: 0.1rem solid ${({ theme }) => theme.colors.lines};
   }
 `

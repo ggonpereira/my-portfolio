@@ -22,6 +22,14 @@ export const ContactFormArea = styled.div`
   flex: 1;
   padding: 4rem 5rem;
   min-width: 45rem;
+
+  @media all and (max-width: 720px) {
+    min-width: auto;
+  }
+
+  @media all and (max-width: 460px) {
+    padding: 3rem 2.7rem;
+  }
 `
 
 export const Form = styled.form`
@@ -61,6 +69,10 @@ export const TextArea = styled.textarea`
 export const WidthLimiter = styled.div`
   width: 45vw;
   flex: 3;
+
+  @media all and (max-width: 720px) {
+    width: auto;
+  }
 `
 
 export const CodeSnippetArea = styled.div`
@@ -88,5 +100,9 @@ export const CodeSnippetArea = styled.div`
     span {
       font-weight: 400 !important;
     }
+  }
+
+  @media all and (max-width: 460px) {
+    padding: 3rem 2.7rem;
   }
 `

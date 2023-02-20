@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 
 export const OpenedFilesHeader = styled.div`
+  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
   display: flex;
+  height: fit-content;
   overflow: auto;
   width: 100%;
-  border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
-  height: fit-content;
+
+  @media all and (max-width: 460px) {
+    margin-top: 1.6rem;
+    border-top: 0.1rem solid ${({ theme }) => theme.colors.lines};
+  }
 `
 
 export const File = styled.div`

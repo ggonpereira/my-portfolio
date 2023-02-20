@@ -11,6 +11,10 @@ export const Container = styled.div`
   flex-direction: column;
 
   gap: 2.6rem;
+
+  @media all and (max-width: 460px) {
+    padding: 3rem 2.7rem;
+  }
 `
 
 export const Project = styled.div`
