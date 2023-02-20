@@ -1,5 +1,6 @@
 import React from 'react'
 import { RiArrowRightSFill } from 'react-icons/ri'
+import { makeElementTabSelectable } from '../../../../utils/helpers'
 import { Checkbox } from '../../../Checkbox'
 import { Typography } from '../../../Typography'
 import { SidebarContentProps } from './interfaces'
@@ -18,7 +19,11 @@ export const SidebarContent = ({
         <Typography>_projects</Typography>
       </S.ActualPageInform>
 
-      <S.DropdownHeader isOpen={isTopicOpen} onClick={handleTopicVisibility}>
+      <S.DropdownHeader
+        isOpen={isTopicOpen}
+        onClick={handleTopicVisibility}
+        {...makeElementTabSelectable}
+      >
         <RiArrowRightSFill />
 
         <Typography>projects</Typography>

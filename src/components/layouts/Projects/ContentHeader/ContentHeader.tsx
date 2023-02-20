@@ -3,6 +3,7 @@ import { ContentHeaderProps } from './interfaces'
 import * as S from './ContentHeader.styles'
 import { Typography } from '../../../Typography'
 import { RiCloseFill } from 'react-icons/ri'
+import { makeElementTabSelectable } from '../../../../utils/helpers'
 
 export const ContentHeader = ({
   selectedTechs,
@@ -16,7 +17,7 @@ export const ContentHeader = ({
           <S.File key={selectedTechsInOneString}>
             <Typography>{selectedTechsInOneString}</Typography>
 
-            <div onClick={handleUnselectAllTechs}>
+            <div onClick={handleUnselectAllTechs} {...makeElementTabSelectable}>
               <RiCloseFill />
             </div>
           </S.File>
