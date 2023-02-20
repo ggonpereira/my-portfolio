@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     font-size: 62.5%;
 
-    @media all and (min-width: 812px) and (max-width: 1440px) {
+    @media all and (max-width: 1440px) {
       font-size: 52.5%;
     }
   }

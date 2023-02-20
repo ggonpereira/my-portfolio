@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { TopicDropdown } from '../../../TopicDropdown'
+import { Typography } from '../../../Typography'
 import { SidebarContentProps } from './interfaces'
 import * as S from './SidebarContent.styles'
 
@@ -15,6 +16,10 @@ export const SidebarContent = ({
           <Fragment key={i}>{icon}</Fragment>
         ))}
       </S.DecorationIcons>
+
+      <S.ActualPageInform>
+        <Typography>_about-me</Typography>
+      </S.ActualPageInform>
 
       <S.MainSidebar>
         {topics.map((topic, i) => (

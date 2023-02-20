@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const NoFilesSelected = styled.div`
   flex: 1;
+  padding: 1.6rem 0px;
 `
 
 export const OpenedFilesContent = styled.div`

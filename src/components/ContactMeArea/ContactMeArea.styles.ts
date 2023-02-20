@@ -5,8 +5,8 @@ export const Container = styled.div`
   height: 100%;
 
   button {
-    width: 100%;
-    border-top-right-radius: 8px;
     border-right: none !important;
+    border-top-right-radius: 8px;
+    width: 100%;
   }
 `

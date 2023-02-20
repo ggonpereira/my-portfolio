@@ -5,6 +5,14 @@ export const Container = styled.div`
   flex: 1;
   height: 100%;
   max-width: 42.5rem;
+
+  @media all and (max-width: 1035px) {
+    border-left: none;
+    border-top: 0.1rem solid ${({ theme }) => theme.colors.lines};
+    flex-direction: column;
+    width: 100%;
+    max-width: none;
+  }
 `
 
 export const Header = styled.header`

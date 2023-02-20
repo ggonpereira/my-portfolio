@@ -14,7 +14,9 @@ export const MainContent = ({
     <>
       {openedFiles.length === 0 && (
         <S.NoFilesSelected>
-          <SyntaxHighlighter>{noFilesSelectedState}</SyntaxHighlighter>
+          <SyntaxHighlighter wrapLongLines>
+            {noFilesSelectedState}
+          </SyntaxHighlighter>
         </S.NoFilesSelected>
       )}
 

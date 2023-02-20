@@ -60,6 +60,8 @@ const hideElementCSS = css`
 
 const mainAreaBaseCSS = css`
   align-items: center;
+  background: none;
+  border: none;
   display: flex;
   gap: 0.8rem;
 
@@ -97,9 +99,15 @@ export const TopicDropdown = styled.div`
     border-top: 0.1rem solid ${({ theme }) => theme.colors.lines};
     border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
   }
+
+  @media all and (max-width: 720px) {
+    & + & {
+      border-bottom: none;
+    }
+  }
 `
 
-export const DropdownHeader = styled.div<DropdownHeaderProps>`
+export const DropdownHeader = styled.button<DropdownHeaderProps>`
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -107,6 +115,8 @@ export const DropdownHeader = styled.div<DropdownHeaderProps>`
   padding: 1rem;
   user-select: none;
   width: 100%;
+  background: none;
+  border: none;
 
   svg {
     fill: ${({ theme }) => theme.colors.white};
@@ -123,6 +133,19 @@ export const DropdownHeader = styled.div<DropdownHeaderProps>`
 
   :hover {
     ${hoverDropdownHeaderCSS}
+  }
+
+  @media all and (max-width: 720px) {
+    background-color: ${({ theme }) => theme.colors.lines};
+    border-bottom: 0.3rem solid ${({ theme }) => theme.colors.primary.darkBlue};
+    color: ${({ theme }) => theme.colors.white};
+
+    svg,
+    p {
+      color: ${({ theme }) => theme.colors.white};
+      fill: ${({ theme }) => theme.colors.white};
+      opacity: 1;
+    }
   }
 `
 

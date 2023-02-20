@@ -46,6 +46,7 @@ export const MoreInfoText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
+  z-index: 1;
 
   button {
     margin-bottom: 1rem;

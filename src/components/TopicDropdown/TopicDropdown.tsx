@@ -1,15 +1,11 @@
 import React, { useState } from 'react'
 import { RiArrowRightSFill } from 'react-icons/ri'
 import { Content } from '../../types/Content'
-import { TopicObject } from '../../types/Topic'
 import { Typography } from '../Typography'
+import { TopicDropdownProps } from './interfaces'
 import * as S from './TopicDropdown.styles'
 import { TopicFile } from './TopicFile'
 import { TopicFolder } from './TopicFolder'
-
-interface TopicDropdownProps extends TopicObject {
-  handleOpenFileFromSidebar?: (fileTitle: string) => void
-}
 
 export const TopicDropdown = ({
   topicTitle,

@@ -15,6 +15,10 @@ type MainContentProps = {
 export const Container = styled.div`
   display: flex;
   height: 100%;
+
+  @media all and (max-width: 460px) {
+    flex-direction: column;
+  }
 `
 
 export const Sidebar = styled.aside<SidebarProps>`
@@ -23,6 +27,11 @@ export const Sidebar = styled.aside<SidebarProps>`
   height: 100%;
   width: ${({ sidebarContentInitialWidth }) =>
     sidebarContentInitialWidth || '33rem'};
+
+  @media all and (max-width: 460px) {
+    border-right: none;
+    width: 100%;
+  }
 `
 
 export const MainSidebar = styled.div`
@@ -50,4 +59,8 @@ export const MainContent = styled.div<MainContentProps>`
   display: flex;
   height: 100%;
   width: ${({ mainContentInitialWidth }) => mainContentInitialWidth || '100%'};
+
+  @media all and (max-width: 1035px) {
+    flex-direction: column;
+  }
 `

@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const Sidebar = styled.aside`
   display: flex;
   height: 100%;
+
+  @media all and (max-width: 720px) {
+    flex-direction: column;
+  }
 `
 
 export const DecorationIcons = styled.div`
@@ -14,6 +18,10 @@ export const DecorationIcons = styled.div`
   padding: 1.7rem 2.2rem;
   width: fit-content;
 
+  @media all and (max-width: 720px) {
+    display: none;
+  }
+
   svg {
     fill: ${({ theme }) => theme.colors.secondary.grey};
     cursor: pointer;
@@ -23,6 +31,19 @@ export const DecorationIcons = styled.div`
     &:nth-of-type(2) {
       opacity: 1;
     }
+  }
+`
+
+export const ActualPageInform = styled.div`
+  display: none;
+  padding: 16px;
+
+  p {
+    color: ${({ theme }) => theme.colors.white};
+  }
+
+  @media all and (max-width: 720px) {
+    display: flex;
   }
 `
 
