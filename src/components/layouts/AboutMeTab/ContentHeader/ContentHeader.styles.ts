@@ -6,6 +6,11 @@ export const OpenedFilesHeader = styled.div`
   width: 100%;
   border-bottom: 0.1rem solid ${({ theme }) => theme.colors.lines};
   height: fit-content;
+
+  @media all and (max-width: 460px) {
+    border-top: 0.1rem solid ${({ theme }) => theme.colors.lines};
+    margin-top: 1.6rem;
+  }
 `
 
 export const File = styled.div`
