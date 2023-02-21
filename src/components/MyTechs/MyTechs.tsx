@@ -1,6 +1,6 @@
 import React from 'react'
-import { RiReactjsFill } from 'react-icons/ri'
 import { useTheme } from 'styled-components'
+import { myTechs } from '../../content/about-me'
 import { TechCard } from '../TechCard'
 import { Typography } from '../Typography'
 import * as S from './MyTechs.styles'
@@ -15,13 +15,16 @@ export const MyTechs = () => {
       </S.Header>
 
       <S.Techs>
-        <TechCard
-          icon={<RiReactjsFill />}
-          iconColor="#61dafb"
-          name="React.JS"
-          url="https://reactjs.org/"
-          yearsOfExperience={2}
-        />
+        {myTechs.map((tech) => (
+          <TechCard
+            key={tech.name}
+            icon={tech.icon}
+            iconColor={tech.iconColor}
+            name={tech.name}
+            url={tech.url}
+            yearsOfExperience={tech.yearsOfExperience}
+          />
+        ))}
       </S.Techs>
     </S.Container>
   )

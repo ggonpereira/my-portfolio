@@ -155,5 +155,6 @@ export const TechContent = styled.div`
   svg {
     fill: ${({ theme }) => theme.colors.secondary.grey};
     font-size: 2.4rem;
+    width: 2.4rem;
   }
 `

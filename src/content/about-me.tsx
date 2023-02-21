@@ -10,6 +10,20 @@ import {
   RiMusic2Fill,
   RiTerminalBoxFill,
 } from 'react-icons/ri'
+import {
+  SiNextdotjs,
+  SiStyledcomponents,
+  SiTypescript,
+  SiJest,
+  SiTestinglibrary,
+  SiMaterialui,
+  SiReact,
+  SiStorybook,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+} from 'react-icons/si'
 import { TopicObject } from '../types/Topic'
 
 export const decorationIcons = [
@@ -83,16 +97,11 @@ export const aboutMeTopics: TopicObject[] = [
   },
 ]
 
-export const noFilesSelectedState = `/**
-  *
-  * OPEN A FILE ON THE LEFT SIDEBAR TO VIEW INFORMATION
-  * 
-**/`
-
 export const filesContent = [
   {
     fileTitle: 'who-am-i.md',
     content: `/**
+  *  
   * WHO AM I
   *
   * I am a Front-end engineer with more than
@@ -115,6 +124,7 @@ export const filesContent = [
   {
     fileTitle: 'my-goals.md',
     content: `/**
+  *
   * MY GOALS
   *
   * My goals include continuing to learn 
@@ -138,17 +148,36 @@ export const filesContent = [
   {
     fileTitle: 'work-experience.md',
     content: `/**
+  *
   * WORK EXPERIENCE
   *
-  * Jr. Front-End Developer
-  * Quetz
-  * feb. 2021 ~ sep. 2021 (8 months)
+  * Front-end Engineer
+  * Flatirons Development
+  * may 2022 ~ at the moment
   * 
-  * • Websites development using technologies 
-  * like WordPress, HTML, CSS, JavaScript
+  * • Development of new functionalities in the 
+ * application following code patterns and tests
+ * • Maintenance in the pre-existent code 
+ * (code refactoring and bug fixes)
+ * • Use of technologies like TypeScript, 
+ * ReactJS, Styled Components, NextJS and much 
+ * more
+ * • Work on different projects solving problems,
+ * implementing new features, and working on the 
+ * implementation of designs
+ *
+ * ===========================================
+ *
+ * Jr. Front-End Developer
+ * Quetz
+ * feb. 2021 ~ sep. 2021 (8 months)
+ * 
+ * • Websites development using technologies 
+ * like WordPress, HTML, CSS, JavaScript
  * • Performing updates, changes, and 
  * improvements in existing websites
  * 
+ * ===========================================
  *   
  * Jr. Front-End Developer
  * Grupo Acert
@@ -164,27 +193,12 @@ export const filesContent = [
  * ReactJS, Material UI, Styled Components and 
  * Webpack
  * 
- * 
- * Front-end Engineer
- * Flatirons Development
- * may 2022 ~ at the moment
- * 
- * • Development of new functionalities in the 
- * application following code patterns and tests
- * • Maintenance in the pre-existent code 
- * (code refactoring and bug fixes)
- * • Use of technologies like TypeScript, 
- * ReactJS, Styled Components, NextJS and much 
- * more
- * • Work on different projects solving problems,
- * implementing new features, and working on the 
- * implementation of designs
- * 
 **/`,
   },
   {
     fileTitle: 'on-my-free-time.md',
     content: `/**
+  *
   * ON HOBBIES
   *
   * It could be a classic response if I say
@@ -200,6 +214,7 @@ export const filesContent = [
   {
     fileTitle: 'on-life.md',
     content: `/**
+  *
   * ON LIFE
   *
   * Definitively the biggest interest I have is
@@ -221,6 +236,7 @@ export const filesContent = [
   {
     fileTitle: 'education.md',
     content: `/**
+  *
   * EDUCATION
   *
   * I couldn't talk about education without
@@ -263,3 +279,103 @@ export const filesContent = [
 **/`,
   },
 ]
+
+export const myTechs = [
+  {
+    icon: <SiReact />,
+    iconColor: '#61dafb',
+    name: 'ReactJS',
+    url: 'https://reactjs.org/',
+    yearsOfExperience: 2.5,
+  },
+  {
+    icon: <SiNextdotjs />,
+    iconColor: '#000000',
+    name: 'NextJS',
+    url: 'https://nextjs.org/',
+    yearsOfExperience: 1,
+  },
+  {
+    icon: <SiStorybook />,
+    iconColor: '#FF4785',
+    name: 'Storybook',
+    url: 'https://storybook.js.org/',
+    yearsOfExperience: 0.6,
+  },
+  {
+    icon: <SiTailwindcss />,
+    iconColor: '#222222',
+    name: 'Tailwind CSS',
+    url: 'https://tailwindcss.com/',
+    yearsOfExperience: 0.8,
+  },
+  {
+    icon: <SiReact />,
+    iconColor: '#86E1F9',
+    name: 'React Native',
+    url: 'https://reactnative.dev/',
+    yearsOfExperience: 0.4,
+  },
+  {
+    icon: <SiStyledcomponents />,
+    iconColor: '#DB7093',
+    name: 'Styled Components',
+    url: 'https://styled-components.com/',
+    yearsOfExperience: 2.5,
+  },
+  {
+    icon: <SiTypescript />,
+    iconColor: '#007ACC',
+    name: 'TypeScript',
+    url: 'https://www.typescriptlang.org/',
+    yearsOfExperience: 2.1,
+  },
+  {
+    icon: <SiTestinglibrary />,
+    iconColor: '#E33332',
+    name: 'React Testing Library',
+    url: 'https://testing-library.com/',
+    yearsOfExperience: 1,
+  },
+  {
+    icon: <SiJest />,
+    iconColor: '#C21325',
+    name: 'Jest',
+    url: 'https://jestjs.io/',
+    yearsOfExperience: 1,
+  },
+  {
+    icon: <SiMaterialui />,
+    iconColor: '#0081CB',
+    name: 'Material UI',
+    url: 'https://mui.com/',
+    yearsOfExperience: 0.8,
+  },
+  {
+    icon: <SiNodedotjs />,
+    iconColor: '#339933',
+    name: 'Node.JS',
+    url: 'https://nodejs.org/',
+    yearsOfExperience: 0.8,
+  },
+  {
+    icon: <SiExpress />,
+    iconColor: '#000000',
+    name: 'Express',
+    url: 'https://expressjs.com/',
+    yearsOfExperience: 0.6,
+  },
+  {
+    icon: <SiMongodb />,
+    iconColor: '#47A248',
+    name: 'MongoDB',
+    url: 'https://www.mongodb.com/',
+    yearsOfExperience: 0.3,
+  },
+]
+
+export const noFilesSelectedState = `/**
+  *
+  * OPEN A FILE ON THE LEFT SIDEBAR TO VIEW INFORMATION
+  * 
+**/`

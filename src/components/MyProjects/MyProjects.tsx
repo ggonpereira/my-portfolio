@@ -63,7 +63,11 @@ export const MyProjects = ({ selectedTechs, projects }: MyProjectsProps) => {
                 if (!tech) return null
 
                 return (
-                  <S.TechIcon key={tech.name} techColor={tech.bgColor}>
+                  <S.TechIcon
+                    key={tech.name}
+                    techBgColor={tech.bgColor}
+                    title={tech.name}
+                  >
                     {tech.icon}
                   </S.TechIcon>
                 )

@@ -13,8 +13,12 @@ interface AppProviderProps {
 export const AppContext = createContext({} as AppContextProps)
 
 export function AppProvider({ children }: AppProviderProps) {
-  const [activePage, setActivePage] = useState('_hello')
   const router = useRouter()
+  const [activePage, setActivePage] = useState(() => {
+    return router.pathname.replace('/', '_')
+  })
+
+  console.info(activePage)
 
   const handleChangePage = useCallback(
     (tab: string) => {

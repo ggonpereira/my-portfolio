@@ -64,6 +64,23 @@ export const MainContent = styled.div<MainContentProps>`
   display: flex;
   height: 100%;
   width: ${({ mainContentInitialWidth }) => mainContentInitialWidth || '100%'};
+  overflow: auto;
+
+  ::-webkit-scrollbar {
+    width: 0.7rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-left: 0.1rem solid ${({ theme }) => theme.colors.lines};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.secondary.grey};
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }) => theme.colors.secondary.darkGrey};
+  }
 
   @media all and (max-width: 1035px) {
     flex-direction: column;

@@ -12,7 +12,6 @@ export const ContentContainer = styled.div`
 
 export const SelectedTechsHeader = styled.div`
   display: flex;
-  max-width: 55vw;
   overflow: auto;
   width: 100%;
 
