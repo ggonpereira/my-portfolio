@@ -40,9 +40,7 @@ export const ContactMe = ({ topics }: ContactMeProps) => {
   return (
     <ContentStructure
       sidebarContent={<SidebarContent topics={topics} />}
-      contentHeader={
-        <ContentHeader onClick={() => handleChangePage('_hello')} />
-      }
+      contentHeader={<ContentHeader onClick={() => handleChangePage('/')} />}
       mainContent={
         <MainContent
           codeSnippet={t.contactMeCodeSnippet}
