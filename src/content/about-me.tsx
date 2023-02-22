@@ -32,7 +32,7 @@ export const decorationIcons = [
   <RiGamepadFill key={3} />,
 ]
 
-export const aboutMeTopics: TopicObject[] = [
+export const aboutMeTopicsEn: TopicObject[] = [
   {
     topicTitle: 'personal-info',
     content: [
@@ -78,7 +78,7 @@ export const aboutMeTopics: TopicObject[] = [
     ],
   },
   {
-    topicTitle: 'contacts',
+    topicTitle: 'contact',
     content: [
       {
         isFolder: false,
@@ -97,7 +97,72 @@ export const aboutMeTopics: TopicObject[] = [
   },
 ]
 
-export const filesContent = [
+export const aboutMeTopicsPt: TopicObject[] = [
+  {
+    topicTitle: 'info-pessoal',
+    content: [
+      {
+        isFolder: true,
+        folderTitle: 'bio',
+        folderColor: '#E99287',
+        subItems: [
+          {
+            icon: <RiAccountCircleFill />,
+            title: 'quem-sou-eu.md',
+          },
+          {
+            icon: <RiMedalFill />,
+            title: 'meus-objetivos.md',
+          },
+          {
+            icon: <RiMarkdownFill />,
+            title: 'exp-profissional.md',
+          },
+        ],
+      },
+      {
+        isFolder: true,
+        folderTitle: 'interesses',
+        folderColor: '#870058',
+        subItems: [
+          {
+            icon: <RiMusic2Fill />,
+            title: 'no-tempo-livre.md',
+          },
+          {
+            icon: <RiMarkdownFill />,
+            title: 'na-vida.md',
+          },
+        ],
+      },
+      {
+        isFolder: false,
+        contentTitle: 'educacao.md',
+        icon: <RiLightbulbFill />,
+      },
+    ],
+  },
+  {
+    topicTitle: 'contato',
+    content: [
+      {
+        isFolder: false,
+        icon: <RiMailFill />,
+        contentTitle: 'ggonpereira@gmail.com',
+        onClick: 'window.location.href = "mailto:ggonpereira@gmail.com"',
+      },
+      {
+        isFolder: false,
+        icon: <RiLinkedinFill />,
+        contentTitle: 'linkedin',
+        onClick:
+          'window.open("https://linkedin.com/in/gabriel-gon%C3%A7alves-pereira/", "_blank")',
+      },
+    ],
+  },
+]
+
+export const filesContentEn = [
   {
     fileTitle: 'who-am-i.md',
     content: `/**
@@ -167,17 +232,6 @@ export const filesContent = [
  * implementation of designs
  *
  * ===========================================
- *
- * Jr. Front-End Developer
- * Quetz
- * feb. 2021 ~ sep. 2021 (8 months)
- * 
- * • Websites development using technologies 
- * like WordPress, HTML, CSS, JavaScript
- * • Performing updates, changes, and 
- * improvements in existing websites
- * 
- * ===========================================
  *   
  * Jr. Front-End Developer
  * Grupo Acert
@@ -192,6 +246,17 @@ export const filesContent = [
  * • Use of technologies like TypeScript, 
  * ReactJS, Material UI, Styled Components and 
  * Webpack
+ * 
+ * ===========================================
+ *
+ * Jr. Front-End Developer
+ * Quetz
+ * feb. 2021 ~ sep. 2021 (8 months)
+ * 
+ * • Websites development using technologies 
+ * like WordPress, HTML, CSS, JavaScript
+ * • Performing updates, changes, and 
+ * improvements in existing websites
  * 
 **/`,
   },
@@ -275,6 +340,175 @@ export const filesContent = [
  * • Study computer maintenance, assembly,
  * and complete formatting 
  * • Study of Linux and Windows operating systems
+ * 
+**/`,
+  },
+]
+
+export const filesContentPt = [
+  {
+    fileTitle: 'quem-sou-eu.md',
+    content: `/**
+  *  
+  * QUEM SOU EU
+  *
+  * Sou um engenheiro Front-end com mais de
+  * 2 anos de experiência que teve contato
+  * com desenvolvimento back-end e mobile,
+  * apaixonado por tecnologia, desenvolvimento
+  * e usando código para criar coisas novas.
+ * Experiente em JavaScript, ReactJS, CSS,
+ * TypeScript, GraphQL, Material UI,
+ * React Testing Library, Styled Components
+ * e Next JS. Dedicado, proativo,
+ * comunicativo, resiliente e com grande
+ * busca por conhecimento. Passei meus últimos
+ * anos estudando e adquirindo conhecimento
+ * na área de tecnologia e trabalhando em
+ * projetos full-stack.    
+ * 
+**/`,
+  },
+  {
+    fileTitle: 'meus-objetivos.md',
+    content: `/**
+  *
+  * MEUS OBJETIVOS
+  *
+  * Meus objetivos incluem continuar aprendendo
+  * e crescendo como desenvolvedor, focando
+  * especificamente em expandir meu conhecimento
+  * em desenvolvimento back-end, mobile e front-end.
+  * Também espero usar minhas habilidades para
+ * criar projetos inovadores e impactantes,
+ * tanto para fins pessoais quanto profissionais.
+ * Em termos de objetivos de carreira, estou
+ * interessado em encontrar um papel que me permita
+ * usar minhas habilidades e expertise para
+ * contribuir com uma equipe e fazer a diferença
+ * dentro da empresa e da indústria. Comprometo-me
+ * a melhorar continuamente minhas habilidades e
+ * manter-me atualizado com as últimas tecnologias
+ * para alcançar esses objetivos.
+ * 
+**/`,
+  },
+  {
+    fileTitle: 'exp-profissional.md',
+    content: `/**
+  *
+  * EXPERIÊNCIA PROFISSIONAL
+  * 
+  * Engenheiro Front-End
+  * Flatirons Development
+  * maio de 2022 ~ até o momento
+  * 
+  * • Desenvolvimento de novas funcionalidades
+  * na aplicação seguindo padrões de código e testes
+  * • Manutenção no código pré-existente
+ * (refatoração de código e correções de bugs)
+ * • Uso de tecnologias como TypeScript, ReactJS,
+ * Styled Components, NextJS e muito mais
+ * • Trabalho em diferentes projetos resolvendo
+ * problemas, implementando novos recursos e
+ * trabalhando na implementação de designs
+ *
+ * ===========================================
+ *
+ * Desenvolvedor Front-End Jr.
+ * Grupo Acert
+ * set. 2021 ~ maio de 2022 (9 meses)
+ * 
+ * • Desenvolvimento de novas funcionalidades na
+ * aplicação seguindo padrões de código e testes
+ * • Manutenção no código pré-existente
+ * (refatoração de código e correções de bugs)
+ * • Uso de boas práticas das técnicas SCRUM
+ * • Uso de tecnologias como TypeScript, ReactJS,
+ * Material UI, Styled Components e Webpack
+ *
+ * ===========================================
+ * 
+ * Desenvolvedor Front-End Jr.
+ * Quetz
+ * fev. 2021 ~ set. 2021 (8 meses)
+ * 
+ * • Desenvolvimento de sites usando tecnologias
+ * como WordPress, HTML, CSS, JavaScript
+ * • Realização de atualizações, mudanças e
+ * melhorias em sites existentes
+ *
+ **/`,
+  },
+  {
+    fileTitle: 'no-tempo-livre.md',
+    content: `/**
+  * MEUS HOBBIES
+  *
+  * Pode ser uma resposta clássica se eu disser
+  * que meu hobby é jogar vídeo games, mas ultimamente
+  * estou focando minha energia de tempo livre em
+  * assistir Netflix. Aliás, minhas séries favoritas
+  * são Mr Robot, Breaking Bad, Prison Break e Game of
+  * Thrones (bem... podemos apenas ignorar que a 8ª
+ * temporada aconteceu).
+ * 
+**/`,
+  },
+  {
+    fileTitle: 'na-vida.md',
+    content: `/**
+  *
+  * NA VIDA
+  *
+  * Definitivamente, o maior interesse que tenho está
+  * relacionado a viajar. Eu amo viajar e visitar novos
+  * lugares e entrar em contato com diferentes culturas.
+  * Quero viajar muito para diferentes países e conhecer
+  * diferentes experiências e pessoas.
+ *
+ * Outro interesse que desenvolvi há algum tempo é sobre
+ * carros. Mesmo que ainda esteja aprendendo sobre isso,
+ * estou desenvolvendo uma paixão nessa área, como funciona,
+ * as comparações, a história por trás das grandes marcas
+ * e fabricantes e tudo o que envolve esse mundo.
+ * 
+**/`,
+  },
+  {
+    fileTitle: 'educacao.md',
+    content: `/**
+  *
+  * EDUCAÇÃO
+  *
+  * Não poderia falar sobre formação sem mencionar que
+  * a maior forma que aprendi coisas novas foi sendo autodidata,
+  * isso me ajudou muito desde o início da minha jornada
+  * na área de desenvolvimento, sou apaixonado por aprender
+  * coisas novas e entender como as tecnologias funcionam
+ * nos bastidores.
+ *
+ * Agora, em relação à formação formal, tive uma boa base através
+ * do curso de Escola Técnica que fiz durante o ensino médio:
+ *
+ * Computação para Internet na escola ETEC Frei Arnaldo Maria
+ * de Itaporanga.
+ * jan. 2018 ~ dez. 2020
+ *
+ * Desenvolvimento do Trabalho de Conclusão de Curso no curso
+ * de "Computação para Internet", com o tema de um site responsável
+ * por catalogar sinopses e informações de filmes e séries,
+ * exibindo seus principais dados, fotos, trailers e uma lista
+ * mostrando em quais serviços de streaming o conteúdo está disponível.
+ * • Estudo nas áreas Front-end e Back-end, Redes, Manutenção
+ * de Computadores e Segurança Web
+ * • Uso de tecnologias como Bootstrap, HTML, CSS, JavaScript,
+ * jQuery para o Front-end, além de PHP, WordPress, SQL, C# para
+ * o Back-end
+ * • Estudo de redes de computadores e seus aspectos
+ * • Estudo de manutenção de computadores, montagem e formatação
+ * completa
+ * • Estudo dos sistemas operacionais Linux e Windows 
  * 
 **/`,
   },
@@ -374,8 +608,15 @@ export const myTechs = [
   },
 ]
 
-export const noFilesSelectedState = `/**
+export const noFilesSelectedStateEn = `/**
   *
   * OPEN A FILE ON THE LEFT SIDEBAR TO VIEW INFORMATION
+  * 
+**/`
+
+export const noFilesSelectedStatePt = `/**
+  *
+  * SELECIONE UM ARQUIVO NO MENU LATERAL 
+  * ESQUERDO PARA VER INFORMAÇÕES
   * 
 **/`

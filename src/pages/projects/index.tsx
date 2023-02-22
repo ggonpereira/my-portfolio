@@ -1,9 +1,12 @@
-import { techs, projects } from '../../content/projects'
 import { Projects } from '../../components/layouts/pages/Projects'
 import React from 'react'
+import { useTranslationContext } from '../../contexts/TranslationContext'
+import { techs } from '../../content/projects'
 
 const ProjectsPage = () => {
-  return <Projects techs={techs} projects={projects} />
+  const { t } = useTranslationContext()
+
+  return <Projects techs={techs} projects={t.projects} />
 }
 
 export default ProjectsPage

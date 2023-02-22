@@ -8,8 +8,18 @@ import { tabs } from '../../content/tabs'
 import * as S from './Header.styles'
 import { ContactMeArea } from '../ContactMeArea'
 import { Footer } from '../Footer'
+import { useRouter } from 'next/router'
+import { localeIcons } from '../../assets/icons'
+import { HeaderProps } from './interfaces'
+import pt from '../../../public/locales/pt/translations'
+import en from '../../../public/locales/en/translations'
+import { makeElementTabSelectable } from '../../common/helpers/functions'
 
-const MobileHeader = () => {
+const MobileHeader = ({
+  remainingLocales,
+  handleChangeLocal,
+  t,
+}: HeaderProps) => {
   const { colors } = useTheme()
   const [isMenuOpened, setIsMenuOpened] = useState(false)
 
@@ -32,13 +42,29 @@ const MobileHeader = () => {
           <>
             <S.MainArea>
               <S.LinksArea>
-                <TabsArea tabs={tabs} isHorizontal toggleMenu={toggleMenu} />
-                <ContactMeArea label="_contact-me" />
+                <TabsArea tabs={tabs(t)} isHorizontal toggleMenu={toggleMenu} />
+                <ContactMeArea
+                  label={t.CONTACT_ME_LABEL}
+                  tabKey="/contact-me"
+                />
               </S.LinksArea>
             </S.MainArea>
 
             <S.FooterWrapper>
-              <Footer />
+              <S.MobileChangeLanguage>
+                <Typography>{t.CHANGE_LANGUAGE_TO}</Typography>
+                {remainingLocales?.map((local) => (
+                  <S.Flag
+                    key={local}
+                    onClick={() => handleChangeLocal(local)}
+                    {...makeElementTabSelectable}
+                  >
+                    {(localeIcons as any)[local]}
+                  </S.Flag>
+                ))}
+              </S.MobileChangeLanguage>
+
+              <Footer t={t} />
             </S.FooterWrapper>
           </>
         )}
@@ -57,7 +83,11 @@ const MobileHeader = () => {
   )
 }
 
-const DesktopHeader = () => {
+const DesktopHeader = ({
+  remainingLocales,
+  handleChangeLocal,
+  t,
+}: HeaderProps) => {
   const { colors } = useTheme()
 
   return (
@@ -67,23 +97,53 @@ const DesktopHeader = () => {
           <Typography color={colors.secondary.grey}>gabriel-pereira</Typography>
         </S.NameArea>
 
-        <TabsArea tabs={tabs} />
+        <TabsArea tabs={tabs(t)} />
       </S.LeftArea>
 
-      <ContactMeArea label="_contact-me" />
+      <S.RightArea>
+        <S.ChangeLanguage>
+          <Typography>{t.CHANGE_LANGUAGE_TO}</Typography>
+          {remainingLocales?.map((local) => (
+            <S.Flag
+              key={local}
+              onClick={() => handleChangeLocal(local)}
+              {...makeElementTabSelectable}
+            >
+              {(localeIcons as any)[local]}
+            </S.Flag>
+          ))}
+        </S.ChangeLanguage>
+
+        <ContactMeArea label={t.CONTACT_ME_LABEL} tabKey="/contact-me" />
+      </S.RightArea>
     </S.DesktopContainer>
   )
 }
 
 export const Header = () => {
+  const { locales, locale, push, pathname } = useRouter()
+  const remainingLocales = locales?.filter((lang) => lang !== locale)
+  const handleChangeLocal = (local: string) => {
+    push(pathname, undefined, { locale: local })
+  }
+  const t = locale === 'en' ? en : pt
+
   return (
     <>
       <S.MobileWrapper>
-        <MobileHeader />
+        <MobileHeader
+          remainingLocales={remainingLocales}
+          handleChangeLocal={handleChangeLocal}
+          t={t}
+        />
       </S.MobileWrapper>
 
       <S.DesktopWrapper>
-        <DesktopHeader />
+        <DesktopHeader
+          remainingLocales={remainingLocales}
+          handleChangeLocal={handleChangeLocal}
+          t={t}
+        />
       </S.DesktopWrapper>
     </>
   )

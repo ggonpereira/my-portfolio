@@ -8,13 +8,15 @@ import * as S from './Hello.styles'
 import avatarImage from '../../../../assets/avatar.png'
 import { Button } from '../../../Button'
 import { useAppContext } from '../../../../contexts/AppContext'
+import { useTranslationContext } from '../../../../contexts/TranslationContext'
 
 export const Hello = () => {
   const { handleChangePage } = useAppContext()
   const { colors } = useTheme()
+  const { t } = useTranslationContext()
 
   const handleButtonClick = () => {
-    handleChangePage('_about-me')
+    handleChangePage('/about-me')
   }
 
   const PROJECT_LINK = 'https://github.com/ggonpereira/my-portfolio/'
@@ -25,24 +27,26 @@ export const Hello = () => {
         <S.Content>
           <S.GeneralText>
             <Typography variantType="lg" color={colors.white100}>
-              Hello everyone! I am
+              {t.HELLO_EVERYONE}
             </Typography>
 
             <Heading variantType="headline">Gabriel Pereira</Heading>
             <Heading color={colors.secondary.purpleBlue}>
-              &gt; Front-end developer
+              &gt; {t.FRONT_END_DEVELOPER}
             </Heading>
           </S.GeneralText>
 
           <S.MoreInfoText>
-            <Typography>{'//'} click the button below to continue</Typography>
+            <Typography>
+              {'//'} {t.CLICK_BUTTON}
+            </Typography>
 
             <Button btnTheme="primary" onClick={handleButtonClick}>
-              Go to _about-me
+              {t.GO_TO_ABOUT_ME}
             </Button>
 
             <Typography>
-              {'//'} you can see the src code for this project on my GitHub page
+              {'//'} {t.SRC_CODE_GITHUB}
             </Typography>
 
             <S.GitHubLink>

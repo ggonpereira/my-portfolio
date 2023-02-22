@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { useTranslationContext } from '../../../../../contexts/TranslationContext'
 import { TopicDropdown } from '../../../../TopicDropdown'
 import { Typography } from '../../../../Typography'
 import { SidebarContentProps } from './interfaces'
@@ -9,6 +10,8 @@ export const SidebarContent = ({
   decorationIcons,
   handleOpenFileFromSidebar,
 }: SidebarContentProps) => {
+  const { t } = useTranslationContext()
+
   return (
     <S.Sidebar>
       <S.DecorationIcons>
@@ -18,7 +21,7 @@ export const SidebarContent = ({
       </S.DecorationIcons>
 
       <S.ActualPageInform>
-        <Typography>_about-me</Typography>
+        <Typography>{t.ABOUT_ME_PAGE_LABEL}</Typography>
       </S.ActualPageInform>
 
       <S.MainSidebar>

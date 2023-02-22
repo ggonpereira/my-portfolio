@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import {
-  decorationIcons,
-  filesContent,
-  noFilesSelectedState,
-} from '../../../../content/about-me'
+import { decorationIcons } from '../../../../content/about-me'
+import { useTranslationContext } from '../../../../contexts/TranslationContext'
 import { ContentStructure } from '../../ContentStructure'
 import { ContentHeader } from './ContentHeader'
 import { AboutMeProps } from './interfaces'
@@ -13,6 +10,7 @@ import { SidebarContent } from './SidebarContent'
 export const AboutMe = ({ topics }: AboutMeProps) => {
   const [openedFiles, setOpenedFiles] = useState<string[]>([])
   const [fileOnScreen, setFileOnScreen] = useState('')
+  const { t } = useTranslationContext()
 
   const handleOpenFileFromSidebar = (fileName: string) => {
     if (!openedFiles.includes(fileName)) {
@@ -55,8 +53,8 @@ export const AboutMe = ({ topics }: AboutMeProps) => {
       mainContent={
         <MainContent
           fileOnScreen={fileOnScreen}
-          filesContent={filesContent}
-          noFilesSelectedState={noFilesSelectedState}
+          filesContent={t.aboutMeFilesContent}
+          noFilesSelectedState={t.aboutMeNoFilesSelected}
           openedFiles={openedFiles}
         />
       }

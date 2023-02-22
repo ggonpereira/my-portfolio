@@ -4,15 +4,16 @@ import { footerSocialMedias } from '../../content/social-medias'
 import { SocialMediaLink } from '../SocialMediaLink'
 import { Typography } from '../Typography'
 import * as S from './Footer.styles'
+import { FooterProps } from './interfaces'
 
-export const Footer = () => {
+export const Footer = ({ t }: FooterProps) => {
   const GITHUB_HANDLE = 'ggonpereira'
 
   return (
     <S.Container>
       <S.SocialMediaArea>
         <S.FindMeIn>
-          <Typography>find me in:</Typography>
+          <Typography>{t.FIND_ME_IN}</Typography>
         </S.FindMeIn>
 
         <S.SocialMediaIcons>

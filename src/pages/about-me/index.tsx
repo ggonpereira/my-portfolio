@@ -1,9 +1,11 @@
-import { aboutMeTopics } from '../../content/about-me'
 import { AboutMe } from '../../components/layouts/pages/AboutMe/AboutMe'
 import React from 'react'
+import { useTranslationContext } from '../../contexts/TranslationContext'
 
 const AboutMePage = () => {
-  return <AboutMe topics={aboutMeTopics} />
+  const { t } = useTranslationContext()
+
+  return <AboutMe topics={t.aboutMeTopic} />
 }
 
 export default AboutMePage

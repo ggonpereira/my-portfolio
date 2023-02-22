@@ -1,3 +1,3 @@
-import { projects } from '../content/projects'
+import { projectsEn } from '../content/projects'
 
-export type Project = typeof projects[0]
+export type Project = typeof projectsEn[0]

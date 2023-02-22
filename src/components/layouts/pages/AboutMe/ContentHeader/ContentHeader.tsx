@@ -14,17 +14,17 @@ export const ContentHeader = ({
     <>
       {openedFiles.length !== 0 && (
         <S.OpenedFilesHeader>
-          {openedFiles.map((fileTitle) => (
+          {openedFiles.map((fileTitleKey) => (
             <S.File
-              key={fileTitle}
-              onClick={() => handleSetFileOnScreen(fileTitle)}
+              key={fileTitleKey}
+              onClick={() => handleSetFileOnScreen(fileTitleKey)}
               {...makeElementTabSelectable}
             >
-              <Typography>{fileTitle}</Typography>
+              <Typography>{fileTitleKey}</Typography>
 
               <div
                 onClick={(e: React.MouseEvent<any>) =>
-                  handleCloseFile(fileTitle, e)
+                  handleCloseFile(fileTitleKey, e)
                 }
                 {...makeElementTabSelectable}
               >

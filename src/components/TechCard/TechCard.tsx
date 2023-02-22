@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import { useTranslationContext } from '../../contexts/TranslationContext'
 import { Typography } from '../Typography'
 import * as S from './TechCard.styles'
 
@@ -17,6 +18,8 @@ export const TechCard = ({
   icon,
   iconColor,
 }: TechCardProps) => {
+  const { t } = useTranslationContext()
+
   return (
     <S.Container href={url} target="_blank">
       <Typography variantType="lg">
@@ -25,7 +28,9 @@ export const TechCard = ({
 
       <S.TechImage iconColor={iconColor}>{icon}</S.TechImage>
 
-      <Typography>{yearsOfExperience} years of experience</Typography>
+      <Typography>
+        {yearsOfExperience} {t.YEARS_OF_EXPERIENCE}
+      </Typography>
     </S.Container>
   )
 }

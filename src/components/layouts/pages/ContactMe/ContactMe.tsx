@@ -5,22 +5,24 @@ import { useForm as useFormspree } from '@formspree/react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useAppContext } from '../../../../contexts/AppContext'
 import { ContactFormData, ContactMeProps } from './interfaces'
-import { codeSnippet } from '../../../../content/contact-me'
 import { ContentStructure } from '../../ContentStructure'
 import { SidebarContent } from './SidebarContent'
 import { ContentHeader } from './ContentHeader'
 import { MainContent } from './MainContent'
-import { yupEmail, yupRequired } from '../../../../common/helpers/validations'
+import { useTranslationContext } from '../../../../contexts/TranslationContext'
+import { getYupValidationSchema } from '../../../../common/helpers/validations'
 
 const FORMSPREE_FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || ''
 
-const validationSchema = yup.object().shape({
-  name: yupRequired,
-  email: yupEmail,
-  message: yupRequired,
-})
-
 export const ContactMe = ({ topics }: ContactMeProps) => {
+  const { t } = useTranslationContext()
+  const messages = getYupValidationSchema(t)
+  const validationSchema = yup.object().shape({
+    name: messages.required,
+    email: messages.email,
+    message: messages.required,
+  })
+
   const { handleChangePage } = useAppContext()
   const [state, submitFormToFormspree] = useFormspree(FORMSPREE_FORM_ID)
   const {
@@ -31,7 +33,6 @@ export const ContactMe = ({ topics }: ContactMeProps) => {
     resolver: yupResolver(validationSchema),
     mode: 'onBlur',
   })
-
   const onSubmit = (data: ContactFormData) => {
     submitFormToFormspree(data)
   }
@@ -44,7 +45,7 @@ export const ContactMe = ({ topics }: ContactMeProps) => {
       }
       mainContent={
         <MainContent
-          codeSnippet={codeSnippet}
+          codeSnippet={t.contactMeCodeSnippet}
           isValid={isValid}
           errors={errors}
           onSubmit={handleSubmit(onSubmit)}

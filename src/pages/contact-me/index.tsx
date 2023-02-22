@@ -1,9 +1,11 @@
 import React from 'react'
 import { ContactMe } from '../../components/layouts/pages/ContactMe'
-import { contactMeTopics } from '../../content/contact-me'
+import { useTranslationContext } from '../../contexts/TranslationContext'
 
 const ContactMePage = () => {
-  return <ContactMe topics={contactMeTopics} />
+  const { t } = useTranslationContext()
+
+  return <ContactMe topics={t.contactMeTopics} />
 }
 
 export default ContactMePage

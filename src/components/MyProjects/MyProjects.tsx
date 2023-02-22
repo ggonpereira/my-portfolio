@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useMemo } from 'react'
 import { useTheme } from 'styled-components'
 import { openPage } from '../../common/helpers/functions'
-import { noProjectsFound } from '../../content/projects'
+import { useTranslationContext } from '../../contexts/TranslationContext'
 import { Project } from '../../types/Project'
 import { Tech } from '../../types/Tech'
 import { Button } from '../Button'
@@ -17,6 +17,7 @@ interface MyProjectsProps {
 
 export const MyProjects = ({ selectedTechs, projects }: MyProjectsProps) => {
   const { colors } = useTheme()
+  const { t } = useTranslationContext()
 
   const filteredProjects = useMemo(
     () =>
@@ -29,7 +30,7 @@ export const MyProjects = ({ selectedTechs, projects }: MyProjectsProps) => {
   )
 
   if (selectedTechs.length > 0 && filteredProjects.length === 0)
-    return <SyntaxHighlighter>{noProjectsFound}</SyntaxHighlighter>
+    return <SyntaxHighlighter>{t.noProjectsFound}</SyntaxHighlighter>
 
   return (
     <S.Container>
@@ -37,7 +38,7 @@ export const MyProjects = ({ selectedTechs, projects }: MyProjectsProps) => {
         <S.Project key={project.name}>
           <S.ProjectHeader>
             <Typography weight="700" color={colors.secondary.purpleBlue}>
-              Project {++index}
+              {t.PROJECT} {++index}
             </Typography>
             <Typography color={colors.secondary.grey}>
               {'//'} {project.name}
@@ -88,7 +89,7 @@ export const MyProjects = ({ selectedTechs, projects }: MyProjectsProps) => {
                   btnTheme="default"
                   onClick={() => openPage(project.url)}
                 >
-                  view-project
+                  {t.VIEW_PROJECT}
                 </Button>
               </S.ProjectDescription>
             </S.ProjectInformation>

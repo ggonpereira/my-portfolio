@@ -1,6 +1,7 @@
 import React from 'react'
 import { RiArrowRightSFill } from 'react-icons/ri'
 import { makeElementTabSelectable } from '../../../../../common/helpers/functions'
+import { useTranslationContext } from '../../../../../contexts/TranslationContext'
 import { Checkbox } from '../../../../Checkbox'
 import { Typography } from '../../../../Typography'
 import { SidebarContentProps } from './interfaces'
@@ -13,10 +14,12 @@ export const SidebarContent = ({
   handleTechClick,
   verifyIfTechIsSelected,
 }: SidebarContentProps) => {
+  const { t } = useTranslationContext()
+
   return (
     <S.Dropdown>
       <S.ActualPageInform>
-        <Typography>_projects</Typography>
+        <Typography>{t.PROJECTS_PAGE_LABEL}</Typography>
       </S.ActualPageInform>
 
       <S.DropdownHeader
@@ -26,7 +29,7 @@ export const SidebarContent = ({
       >
         <RiArrowRightSFill />
 
-        <Typography>projects</Typography>
+        <Typography>{t.PROJECTS_LABEL}</Typography>
       </S.DropdownHeader>
 
       <S.DropdownContent isOpen={isTopicOpen}>

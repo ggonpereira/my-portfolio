@@ -14,16 +14,12 @@ export const AppContext = createContext({} as AppContextProps)
 
 export function AppProvider({ children }: AppProviderProps) {
   const router = useRouter()
-  const [activePage, setActivePage] = useState(() => {
-    return router.pathname.replace('/', '_')
-  })
-
-  console.info(activePage)
+  const [activePage, setActivePage] = useState(() => router.pathname)
 
   const handleChangePage = useCallback(
     (tab: string) => {
       if (tab !== activePage) {
-        setActivePage(tab)
+        setActivePage(tab.replace('_', ''))
         router.push(tab.replace('_', ''))
       }
     },

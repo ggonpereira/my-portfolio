@@ -5,20 +5,25 @@ import * as S from './RoutesWrapper.styles'
 import { Footer } from '../../Footer'
 import { Header } from '../../Header'
 import useWindowDimensions from '../../../hooks/useWindowDimensions'
+import { GenericObj } from '../../../types/Object'
+import pt from '../../../../public/locales/pt/translations'
+import en from '../../../../public/locales/en/translations'
 
-const allRoutes = {
-  '/': 'Hello',
-  '/about-me': 'About Me',
-  '/projects': 'Projects',
-  '/contact-me': 'Contact Me',
-}
+const allRoutes = (t: any) => ({
+  '/': t.HELLO,
+  '/about-me': t.ABOUT_ME,
+  '/projects': t.PROJECTS,
+  '/contact-me': t.CONTACT_ME,
+})
 
 const generateTitle = (route: string) => `Portfolio - ${route}`
 
 export const RoutesWrapper = ({ children }: RoutesWrapperProps) => {
-  const { pathname } = useRouter()
+  const { locale, pathname } = useRouter()
+  const t = locale === 'en' ? en : pt
 
-  const pageTitle = generateTitle((allRoutes as any)[pathname]) || 'Dollaride'
+  const pageTitle =
+    generateTitle((allRoutes(t) as GenericObj)[pathname]) || 'Portfolio'
   const { width } = useWindowDimensions()
 
   if (!width) return null
@@ -34,7 +39,7 @@ export const RoutesWrapper = ({ children }: RoutesWrapperProps) => {
 
         <S.PageWrapper>{children}</S.PageWrapper>
 
-        {width > 414 && <Footer />}
+        {width > 414 && <Footer t={t} />}
       </S.Container>
     </>
   )

@@ -26,6 +26,29 @@ export const LeftArea = styled.div`
   height: 100%;
 `
 
+export const RightArea = styled.div`
+  align-items: center;
+  display: flex;
+  gap: 2.2rem;
+`
+
+export const ChangeLanguage = styled.div`
+  align-items: center;
+  display: flex;
+  gap: 1.2rem;
+`
+
+export const Flag = styled.div`
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+
+  svg {
+    height: auto;
+    width: 2.2rem;
+  }
+`
+
 export const NameArea = styled.div`
   align-items: center;
   display: flex;
@@ -68,8 +91,8 @@ export const TopArea = styled.div`
 `
 
 export const IconWrapper = styled.button`
-  border: none;
   background: transparent;
+  border: none;
   display: flex;
 
   svg {
@@ -89,4 +112,10 @@ export const LinksArea = styled.div``
 export const FooterWrapper = styled.div`
   width: 100%;
   border-radius: 0px 0px 8px 8px;
+`
+
+export const MobileChangeLanguage = styled.div`
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 2.2rem;
 `

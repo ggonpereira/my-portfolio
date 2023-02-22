@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { noTechsSelectedState } from '../../../../content/projects'
+import { useTranslationContext } from '../../../../contexts/TranslationContext'
 import { Project } from '../../../../types/Project'
 import { Tech } from '../../../../types/Tech'
 import { ContentStructure } from '../../ContentStructure'
@@ -15,6 +15,7 @@ interface ProjectsProps {
 export const Projects = ({ techs, projects }: ProjectsProps) => {
   const [selectedTechs, setSelectedTechs] = useState<Tech[]>(techs)
   const [isTopicOpen, setIsTopicOpen] = useState(false)
+  const { t } = useTranslationContext()
 
   const verifyIfTechIsSelected = (tech: Tech) =>
     selectedTechs.some((stored) => stored.name === tech.name)
@@ -67,7 +68,7 @@ export const Projects = ({ techs, projects }: ProjectsProps) => {
         }
         mainContent={
           <MainContent
-            noTechsSelectedState={noTechsSelectedState}
+            noTechsSelectedState={t.noTechsSelected}
             projects={projects}
             selectedTechs={selectedTechs}
           />

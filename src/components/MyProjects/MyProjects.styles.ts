@@ -67,8 +67,8 @@ export const TechIcon = styled.div<TechIconProps>`
   width: 2.8rem;
 
   svg {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
   }
 `
 

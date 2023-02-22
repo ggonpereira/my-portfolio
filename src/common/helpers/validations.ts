@@ -1,11 +1,10 @@
 import * as yup from 'yup'
 
-export const yupEmail = yup
-  .string()
-  .email('Invalid email')
-  .required('Email is required')
+export const getYupValidationSchema = (t: any) => {
+  const yupValidationSchema = {
+    email: yup.string().email(t.INVALID_EMAIL).required(t.REQUIRED_EMAIL),
+    required: yup.string().nullable().required(t.REQUIRED_FIELD),
+  }
 
-export const yupRequired = yup
-  .string()
-  .nullable()
-  .required('This is a required field')
+  return yupValidationSchema
+}

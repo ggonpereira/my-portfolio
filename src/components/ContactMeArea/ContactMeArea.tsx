@@ -2,20 +2,17 @@ import React from 'react'
 import { useAppContext } from '../../contexts/AppContext'
 import { Tab } from '../Tab'
 import * as S from './ContactMeArea.styles'
+import { ContactMeAreaProps } from './interfaces'
 
-interface ContactMeAreaProps {
-  label: string
-}
-
-export const ContactMeArea = ({ label }: ContactMeAreaProps) => {
+export const ContactMeArea = ({ label, tabKey }: ContactMeAreaProps) => {
   const { activePage, handleChangePage } = useAppContext()
 
   return (
     <S.Container>
       <Tab
-        isActive={activePage === label}
+        isActive={activePage === tabKey}
         setTabActive={handleChangePage}
-        tabName={label}
+        tabKey={tabKey}
       >
         {label}
       </Tab>

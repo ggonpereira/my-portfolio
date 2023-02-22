@@ -1,13 +1,8 @@
 import React from 'react'
 import { useAppContext } from '../../contexts/AppContext'
 import { Tab } from '../Tab'
+import { TabsAreaProps } from './interfaces'
 import * as S from './TabsArea.styles'
-
-interface TabsAreaProps {
-  tabs: string[]
-  isHorizontal?: boolean
-  toggleMenu?: () => void
-}
 
 export const TabsArea = ({ tabs, isHorizontal, toggleMenu }: TabsAreaProps) => {
   const { activePage, handleChangePage } = useAppContext()
@@ -21,12 +16,12 @@ export const TabsArea = ({ tabs, isHorizontal, toggleMenu }: TabsAreaProps) => {
     <S.Container isHorizontal={isHorizontal}>
       {tabs.map((tab) => (
         <Tab
-          isActive={activePage === tab}
+          isActive={activePage === tab.key}
           setTabActive={handleTabClick}
-          tabName={tab}
-          key={tab}
+          tabKey={tab.key}
+          key={tab.label}
         >
-          {tab}
+          {tab.label}
         </Tab>
       ))}
     </S.Container>

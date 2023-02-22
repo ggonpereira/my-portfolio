@@ -4,6 +4,7 @@ import * as S from './MainContent.styles'
 import { Button } from '../../../../Button'
 import { SyntaxHighlighter } from '../../../../SyntaxHighlighter'
 import { LabelledInput } from '../../../../LabelledInput'
+import { useTranslationContext } from '../../../../../contexts/TranslationContext'
 
 export const MainContent = ({
   onSubmit,
@@ -13,6 +14,8 @@ export const MainContent = ({
   codeSnippet,
   isValid,
 }: MainContentProps) => {
+  const { t } = useTranslationContext()
+
   return (
     <>
       <S.ContactFormArea>
@@ -21,7 +24,7 @@ export const MainContent = ({
             name="name"
             id="name"
             errors={errors}
-            label="_name:"
+            label={t.NAME_LABEL}
             register={register}
           />
 
@@ -29,7 +32,7 @@ export const MainContent = ({
             name="email"
             id="email"
             errors={errors}
-            label="_email:"
+            label={t.EMAIL_LABEL}
             register={register}
           />
 
@@ -37,13 +40,13 @@ export const MainContent = ({
             name="message"
             id="message"
             errors={errors}
-            label="_message:"
+            label={t.MESSAGE_LABEL}
             register={register}
             isTextArea
           />
 
           <Button type="submit" disabled={state.submitting || !isValid}>
-            submit-message
+            {t.SUBMIT_MESSAGE}
           </Button>
         </S.Form>
       </S.ContactFormArea>
