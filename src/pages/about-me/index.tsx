@@ -9,3 +9,9 @@ const AboutMePage = () => {
 }
 
 export default AboutMePage
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}

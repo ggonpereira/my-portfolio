@@ -9,3 +9,9 @@ const ContactMePage = () => {
 }
 
 export default ContactMePage
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}

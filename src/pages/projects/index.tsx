@@ -10,3 +10,9 @@ const ProjectsPage = () => {
 }
 
 export default ProjectsPage
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}

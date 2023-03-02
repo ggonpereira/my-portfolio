@@ -6,3 +6,9 @@ const HelloPage = () => {
 }
 
 export default HelloPage
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
