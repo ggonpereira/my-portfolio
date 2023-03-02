@@ -32,6 +32,30 @@ export const RoutesWrapper = ({ children }: RoutesWrapperProps) => {
     <>
       <Head>
         <title>{pageTitle}</title>
+
+        <meta
+          name="description"
+          content="Frontend Engineer passionated on ReactJS and TypeScript stacks."
+        />
+        <meta
+          property="og:title"
+          content="Gabriel Pereira - Frontend Engineer"
+        />
+        <meta
+          property="og:description"
+          content="Frontend Engineer passionated on ReactJS and TypeScript stacks."
+        />
+        <meta property="og:url" content="https://ggpereira.dev/" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="twitter:title"
+          content="Gabriel Pereira - Frontend Engineer"
+        />
+        <meta
+          property="twitter:description"
+          content="Frontend Engineer passionated on ReactJS and TypeScript stacks"
+        />
+        <meta property="twitter:url" content="https://ggpereira.dev/" />
       </Head>
 
       <S.Container>
